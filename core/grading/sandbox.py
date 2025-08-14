@@ -1,8 +1,7 @@
 """Sandbox execution for student code."""
 
 import signal
-import sys
-from typing import Any, Dict
+from typing import Any
 
 
 class TimeoutError(Exception):
@@ -16,7 +15,9 @@ def timeout_handler(signum: int, frame: Any) -> None:
     raise TimeoutError("Code execution timed out")
 
 
-def execute_with_timeout(code: str, globals_dict: Dict[str, Any], timeout: int = 30) -> None:
+def execute_with_timeout(
+    code: str, globals_dict: dict[str, Any], timeout: int = 30
+) -> None:
     """
     Execute code with timeout and memory restrictions.
 
@@ -49,7 +50,7 @@ def execute_with_timeout(code: str, globals_dict: Dict[str, Any], timeout: int =
     except TimeoutError:
         raise
     except Exception as e:
-        raise RuntimeError(f"Code execution failed: {e}")
+        raise RuntimeError(f"Code execution failed: {e}") from e
     finally:
         # Reset alarm
         if hasattr(signal, "SIGALRM"):
@@ -57,7 +58,7 @@ def execute_with_timeout(code: str, globals_dict: Dict[str, Any], timeout: int =
             signal.signal(signal.SIGALRM, old_handler)
 
 
-def _create_restricted_globals(base_globals: Dict[str, Any]) -> Dict[str, Any]:
+def _create_restricted_globals(base_globals: dict[str, Any]) -> dict[str, Any]:
     """Create restricted global namespace."""
     # Start with safe builtins
     safe_builtins = {
@@ -127,7 +128,11 @@ def _create_restricted_globals(base_globals: Dict[str, Any]) -> Dict[str, Any]:
 
     import builtins
 
-    restricted_builtins = {name: getattr(builtins, name) for name in safe_builtins if hasattr(builtins, name)}
+    restricted_builtins = {
+        name: getattr(builtins, name)
+        for name in safe_builtins
+        if hasattr(builtins, name)
+    }
 
     # Create restricted globals
     restricted_globals = {"__builtins__": restricted_builtins, **base_globals}

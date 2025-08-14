@@ -1,6 +1,5 @@
 """Plotting utilities for the ML course."""
 
-from typing import Optional, Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,7 +23,9 @@ def setup_plotting_style() -> None:
     )
 
 
-def plot_regression_results(y_true: np.ndarray, y_pred: np.ndarray, title: Optional[str] = None) -> plt.Figure:
+def plot_regression_results(
+    y_true: np.ndarray, y_pred: np.ndarray, title: str | None = None
+) -> plt.Figure:
     """
     Plot regression results (actual vs predicted).
 
@@ -61,7 +62,7 @@ def plot_regression_results(y_true: np.ndarray, y_pred: np.ndarray, title: Optio
 
 
 def plot_classification_results(
-    y_true: np.ndarray, y_pred: np.ndarray, class_names: Optional[list] = None
+    y_true: np.ndarray, y_pred: np.ndarray, class_names: list | None = None
 ) -> plt.Figure:
     """
     Plot classification results (confusion matrix).
@@ -79,7 +80,15 @@ def plot_classification_results(
     cm = confusion_matrix(y_true, y_pred)
 
     fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax, xticklabels=class_names, yticklabels=class_names)
+    sns.heatmap(
+        cm,
+        annot=True,
+        fmt="d",
+        cmap="Blues",
+        ax=ax,
+        xticklabels=class_names,
+        yticklabels=class_names,
+    )
     ax.set_xlabel("Predito")
     ax.set_ylabel("Real")
     ax.set_title("Matriz de Confusão")

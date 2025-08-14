@@ -1,0 +1,34 @@
+slug: "04-validacao"
+title: "Validação & Métricas"
+order: 4
+prerequisites: ["01-fundamentos", "02-regressao", "03-classificacao"]
+outcomes:
+  - "Implementar holdout e k-fold cross-validation"
+  - "Compreender métricas avançadas"
+  - "Aplicar grid search e random search"
+  - "Detectar overfitting e underfitting"
+  - "Usar curvas de validação"
+lessons:
+  - slug: "01_cross_validation"
+    title: "Cross-Validation"
+    notebook: "lessons/01_cross_validation.ipynb"
+    est_time_min: 40
+  - slug: "02_hyperparameter_tuning"
+    title: "Tuning de Hiperparâmetros"
+    notebook: "lessons/02_hyperparameter_tuning.ipynb"
+    est_time_min: 45
+  - slug: "03_model_selection"
+    title: "Seleção de Modelos"
+    notebook: "lessons/03_model_selection.ipynb"
+    est_time_min: 35
+exercises:
+  - slug: "01_cv_implementation"
+    title: "Implementar Cross-Validation"
+    notebook: "exercises/01_cross_validation_impl.ipynb"
+    tests: "exercises/01_cross_validation_impl_tests.py"
+    max_score: 120
+  - slug: "02_grid_search"
+    title: "Grid Search Manual"
+    notebook: "exercises/02_grid_search_manual.ipynb"
+    tests: "exercises/02_grid_search_manual_tests.py"
+    max_score: 100

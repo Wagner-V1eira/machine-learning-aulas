@@ -1,0 +1,24 @@
+slug: "01-fundamentos"
+title: "Fundamentos de Machine Learning"
+order: 1
+prerequisites: []
+outcomes:
+  - "Explicar os conceitos básicos de Machine Learning"
+  - "Distinguir entre aprendizado supervisionado, não supervisionado e por reforço"
+  - "Compreender o fluxo típico de um projeto de ML"
+  - "Aplicar boas práticas de ética em dados"
+lessons:
+  - slug: "01_intro"
+    title: "Introdução ao Machine Learning"
+    notebook: "lessons/01_intro.ipynb"
+    est_time_min: 45
+  - slug: "02_fluxo_ml"
+    title: "Fluxo de Projeto ML"
+    notebook: "lessons/02_fluxo_ml.ipynb"
+    est_time_min: 40
+exercises:
+  - slug: "01_preprocess"
+    title: "Pré-processamento Básico"
+    notebook: "exercises/01_preprocess.ipynb"
+    tests: "exercises/01_preprocess_tests.py"
+    max_score: 100

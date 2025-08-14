@@ -5,15 +5,15 @@ Substitui o Makefile com comandos baseados em Python/UV.
 """
 
 import argparse
-import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
-from typing import List, Optional
 
 
-def run_command(cmd: List[str], cwd: Optional[Path] = None, check: bool = True) -> subprocess.CompletedProcess:
+def run_command(
+    cmd: list[str], cwd: Path | None = None, check: bool = True
+) -> subprocess.CompletedProcess:
     """Executa um comando e retorna o resultado."""
     print(f"→ Executando: {' '.join(cmd)}")
     return subprocess.run(cmd, cwd=cwd, check=check)
@@ -67,9 +67,9 @@ def lint() -> None:
     print("🔍 Verificando código...")
 
     try:
-        run_command(["uv", "run", "ruff", "check", "."])
-        run_command(["uv", "run", "black", "--check", "."])
-        run_command(["uv", "run", "isort", "--check-only", "."])
+        run_command(["uv", "run", "python", "-m", "ruff", "check", "."])
+        run_command(["uv", "run", "python", "-m", "black", "--check", "."])
+        run_command(["uv", "run", "python", "-m", "isort", "--check-only", "."])
         print("✅ Código está conforme as regras!")
     except subprocess.CalledProcessError:
         print("❌ Problemas encontrados no código!")
@@ -80,8 +80,8 @@ def fmt() -> None:
     """Formata código com black e isort."""
     print("🎨 Formatando código...")
 
-    run_command(["uv", "run", "black", "."])
-    run_command(["uv", "run", "isort", "."])
+    run_command(["uv", "run", "python", "-m", "black", "."])
+    run_command(["uv", "run", "python", "-m", "isort", "."])
     print("✅ Código formatado!")
 
 
@@ -90,7 +90,7 @@ def typecheck() -> None:
     print("🔬 Verificando tipos...")
 
     try:
-        run_command(["uv", "run", "mypy", "core/", "scripts/"])
+        run_command(["uv", "run", "python", "-m", "mypy", "core/", "scripts/"])
         print("✅ Verificação de tipos passou!")
     except subprocess.CalledProcessError:
         print("❌ Problemas de tipo encontrados!")
@@ -101,7 +101,19 @@ def test() -> None:
     """Executa testes unitários."""
     print("🧪 Executando testes...")
 
-    run_command(["uv", "run", "pytest", "tests/", "--cov=core", "--cov-report=term-missing", "--cov-report=xml"])
+    run_command(
+        [
+            "uv",
+            "run",
+            "python",
+            "-m",
+            "pytest",
+            "tests/",
+            "--cov=core",
+            "--cov-report=term-missing",
+            "--cov-report=xml",
+        ]
+    )
     print("✅ Testes concluídos!")
 
 
@@ -129,7 +141,9 @@ def grade(module: str, exercise: str) -> None:
         print(f"❌ Arquivo de testes não encontrado: {tests_path}")
         sys.exit(1)
 
-    run_command(["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path])
+    run_command(
+        ["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path]
+    )
     print("✅ Avaliação concluída!")
 
 
@@ -172,7 +186,7 @@ Exemplos:
   python scripts/tasks.py setup
   python scripts/tasks.py grade --module 02-regressao --exercise 01_mae_metric
   python scripts/tasks.py lint
-  
+
 Ou com UV:
   uv run python scripts/tasks.py setup
   uv run ml-curso grade --module 02-regressao --exercise 01_mae_metric
@@ -199,8 +213,12 @@ def main() -> None:
 
     # Comando grade com argumentos
     grade_parser = subparsers.add_parser("grade", help="Executar autograder")
-    grade_parser.add_argument("--module", "-m", required=True, help="Módulo (ex: 02-regressao)")
-    grade_parser.add_argument("--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)")
+    grade_parser.add_argument(
+        "--module", "-m", required=True, help="Módulo (ex: 02-regressao)"
+    )
+    grade_parser.add_argument(
+        "--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)"
+    )
 
     args = parser.parse_args()
 

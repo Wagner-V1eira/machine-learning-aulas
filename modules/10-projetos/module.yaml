@@ -1,0 +1,42 @@
+slug: "10-projetos"
+title: "Projetos de Consolidação"
+order: 10
+prerequisites:
+  - "08-redes-neurais"
+  - "07-series-temporais"
+  - "06-nao-supervisionado"
+  - "05-feature-engineering"
+  - "04-validacao"
+outcomes:
+  - "Aplicar pipeline completo de ML em problemas reais"
+  - "Implementar feature engineering avançado"
+  - "Comparar diferentes algoritmos de ML"
+  - "Criar portfólio pessoal de projetos"
+lessons:
+  - slug: "01_projeto_predicao_precos"
+    title: "Projeto: Predição de Preços Imobiliários"
+    notebook: "lessons/01_projeto_predicao_precos.ipynb"
+    est_time_min: 420
+  - slug: "02_projeto_classificacao_clientes"
+    title: "Projeto: Classificação de Clientes"
+    notebook: "lessons/02_projeto_classificacao_clientes.ipynb"
+    est_time_min: 420
+  - slug: "03_projeto_clustering_segmentacao"
+    title: "Projeto: Segmentação de Mercado"
+    notebook: "lessons/03_projeto_clustering_segmentacao.ipynb"
+    est_time_min: 420
+  - slug: "04_projeto_series_temporais"
+    title: "Projeto: Previsão de Vendas"
+    notebook: "lessons/04_projeto_series_temporais.ipynb"
+    est_time_min: 420
+exercises:
+  - slug: "01_portfolio_ml"
+    title: "Portfólio de Machine Learning"
+    notebook: "exercises/01_portfolio_ml.ipynb"
+    tests: "exercises/01_portfolio_ml_tests.py"
+    max_score: 100
+  - slug: "02_apresentacao_projeto"
+    title: "Apresentação de Projeto"
+    notebook: "exercises/02_apresentacao_projeto.ipynb"
+    tests: "exercises/02_apresentacao_projeto_tests.py"
+    max_score: 100

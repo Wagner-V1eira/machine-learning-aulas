@@ -7,7 +7,8 @@ from core.grading.api import load_notebook_funcs
 
 # Carregar funções do notebook do estudante
 student = load_notebook_funcs(
-    "modules/01-fundamentos/exercises/01_preprocess.ipynb", allowed_imports={"numpy", "pandas"}
+    "modules/01-fundamentos/exercises/01_preprocess.ipynb",
+    allowed_imports={"numpy", "pandas"},
 )
 
 # Extrair funções
@@ -28,7 +29,9 @@ def test_fill_missing_values_mean():
 
     # Verificar se a média foi usada corretamente
     expected_A = data["A"].mean()  # (1+2+4+5)/4 = 3.0
-    assert abs(result.iloc[2]["A"] - expected_A) < 0.001, "Média incorreta para coluna A"
+    assert (
+        abs(result.iloc[2]["A"] - expected_A) < 0.001
+    ), "Média incorreta para coluna A"
 
 
 def test_fill_missing_values_median():
@@ -42,7 +45,9 @@ def test_fill_missing_values_median():
 
     # Verificar se a mediana foi usada corretamente
     expected_A = data["A"].median()  # 2.5
-    assert abs(result.iloc[2]["A"] - expected_A) < 0.001, "Mediana incorreta para coluna A"
+    assert (
+        abs(result.iloc[2]["A"] - expected_A) < 0.001
+    ), "Mediana incorreta para coluna A"
 
 
 def test_detect_outliers_iqr_basic():
@@ -56,10 +61,10 @@ def test_detect_outliers_iqr_basic():
     assert outliers.dtype == bool, "Série deve ser booleana"
 
     # Verificar se 100 foi detectado como outlier
-    assert outliers.iloc[-1] == True, "Valor 100 deveria ser detectado como outlier"
+    assert outliers.iloc[-1] is True, "Valor 100 deveria ser detectado como outlier"
 
     # Verificar se os outros valores não são outliers
-    assert outliers.iloc[0] == False, "Valor 1 não deveria ser outlier"
+    assert outliers.iloc[0] is False, "Valor 1 não deveria ser outlier"
 
 
 def test_detect_outliers_iqr_no_outliers():
@@ -82,8 +87,12 @@ def test_normalize_data_min_max():
     for col in result.select_dtypes(include=[np.number]).columns:
         assert result[col].min() >= 0, f"Valor mínimo da coluna {col} deve ser >= 0"
         assert result[col].max() <= 1, f"Valor máximo da coluna {col} deve ser <= 1"
-        assert abs(result[col].min() - 0) < 0.001, f"Valor mínimo da coluna {col} deve ser 0"
-        assert abs(result[col].max() - 1) < 0.001, f"Valor máximo da coluna {col} deve ser 1"
+        assert (
+            abs(result[col].min() - 0) < 0.001
+        ), f"Valor mínimo da coluna {col} deve ser 0"
+        assert (
+            abs(result[col].max() - 1) < 0.001
+        ), f"Valor máximo da coluna {col} deve ser 1"
 
 
 def test_normalize_data_z_score():
@@ -103,7 +112,9 @@ def test_train_test_split_basic():
     X = pd.DataFrame({"feature1": range(100), "feature2": range(100, 200)})
     y = pd.Series(range(50, 150))
 
-    X_train, X_test, y_train, y_test = train_test_split_custom(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split_custom(
+        X, y, test_size=0.2, random_state=42
+    )
 
     # Verificar tamanhos
     assert len(X_train) == 80, "Tamanho do treino deve ser 80"
@@ -124,14 +135,26 @@ def test_train_test_split_reproducibility():
     y = pd.Series(range(25, 75))
 
     # Duas execuções com mesmo random_state
-    X_train1, X_test1, y_train1, y_test1 = train_test_split_custom(X, y, test_size=0.3, random_state=42)
-    X_train2, X_test2, y_train2, y_test2 = train_test_split_custom(X, y, test_size=0.3, random_state=42)
+    X_train1, X_test1, y_train1, y_test1 = train_test_split_custom(
+        X, y, test_size=0.3, random_state=42
+    )
+    X_train2, X_test2, y_train2, y_test2 = train_test_split_custom(
+        X, y, test_size=0.3, random_state=42
+    )
 
     # Verificar se os resultados são idênticos
-    pd.testing.assert_frame_equal(X_train1, X_train2, "Divisões com mesmo random_state devem ser idênticas")
-    pd.testing.assert_frame_equal(X_test1, X_test2, "Divisões com mesmo random_state devem ser idênticas")
-    pd.testing.assert_series_equal(y_train1, y_train2, "Divisões com mesmo random_state devem ser idênticas")
-    pd.testing.assert_series_equal(y_test1, y_test2, "Divisões com mesmo random_state devem ser idênticas")
+    pd.testing.assert_frame_equal(
+        X_train1, X_train2, "Divisões com mesmo random_state devem ser idênticas"
+    )
+    pd.testing.assert_frame_equal(
+        X_test1, X_test2, "Divisões com mesmo random_state devem ser idênticas"
+    )
+    pd.testing.assert_series_equal(
+        y_train1, y_train2, "Divisões com mesmo random_state devem ser idênticas"
+    )
+    pd.testing.assert_series_equal(
+        y_test1, y_test2, "Divisões com mesmo random_state devem ser idênticas"
+    )
 
 
 def test_hidden_edge_cases():
@@ -141,11 +164,15 @@ def test_hidden_edge_cases():
 
     # Normalização min-max com dados constantes
     result_minmax = normalize_data(constant_data, "min_max")
-    assert not result_minmax["A"].isnull().any(), "Normalização de dados constantes não deve gerar NaN"
+    assert (
+        not result_minmax["A"].isnull().any()
+    ), "Normalização de dados constantes não deve gerar NaN"
 
     # Normalização z-score com dados constantes
     result_zscore = normalize_data(constant_data, "z_score")
-    assert not result_zscore["A"].isnull().any(), "Normalização de dados constantes não deve gerar NaN"
+    assert (
+        not result_zscore["A"].isnull().any()
+    ), "Normalização de dados constantes não deve gerar NaN"
 
     # Teste outliers com dados todos iguais
     outliers = detect_outliers_iqr(constant_data, "A")

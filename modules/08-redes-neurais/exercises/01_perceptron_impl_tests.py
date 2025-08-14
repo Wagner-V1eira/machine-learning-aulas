@@ -5,7 +5,10 @@ import numpy as np
 from core.grading.api import load_notebook_funcs
 
 # Carregar funções do notebook do estudante
-student = load_notebook_funcs("modules/08-redes-neurais/exercises/01_perceptron_impl.ipynb", allowed_imports={"numpy"})
+student = load_notebook_funcs(
+    "modules/08-redes-neurais/exercises/01_perceptron_impl.ipynb",
+    allowed_imports={"numpy"},
+)
 
 # Extrair funções e classes
 step_function = student["step_function"]
@@ -24,7 +27,9 @@ def test_step_function():
     # Teste com array
     result = step_function([1, -1, 0, 2, -2])
     expected = [1, 0, 1, 1, 0]
-    np.testing.assert_array_equal(result, expected, "step_function deve funcionar com arrays")
+    np.testing.assert_array_equal(
+        result, expected, "step_function deve funcionar com arrays"
+    )
 
 
 def test_sigmoid():
@@ -34,7 +39,9 @@ def test_sigmoid():
 
     # sigmoid(-x) = 1 - sigmoid(x)
     x = 2.0
-    assert abs(sigmoid(-x) - (1 - sigmoid(x))) < 0.001, "Propriedade sigmoid(-x) = 1 - sigmoid(x)"
+    assert (
+        abs(sigmoid(-x) - (1 - sigmoid(x))) < 0.001
+    ), "Propriedade sigmoid(-x) = 1 - sigmoid(x)"
 
     # Teste limites
     assert sigmoid(100) > 0.99, "sigmoid de valor grande deve ser ~1"
@@ -43,7 +50,9 @@ def test_sigmoid():
     # Teste com array
     result = sigmoid(np.array([0, 1, -1]))
     assert len(result) == 3, "sigmoid deve funcionar com arrays"
-    assert all(0 <= x <= 1 for x in result), "Todos valores sigmoid devem estar entre 0 e 1"
+    assert all(
+        0 <= x <= 1 for x in result
+    ), "Todos valores sigmoid devem estar entre 0 e 1"
 
 
 def test_accuracy_score():
@@ -56,7 +65,9 @@ def test_accuracy_score():
 
     y_pred_wrong = [0, 1, 0, 0, 1]
     acc_wrong = accuracy_score(y_true, y_pred_wrong)
-    assert abs(acc_wrong - 0.0) < 0.001, "Acurácia para predições totalmente erradas deve ser 0.0"
+    assert (
+        abs(acc_wrong - 0.0) < 0.001
+    ), "Acurácia para predições totalmente erradas deve ser 0.0"
 
     y_pred_half = [1, 0, 0, 1, 1]  # 3/5 corretas
     acc_half = accuracy_score(y_true, y_pred_half)
@@ -109,7 +120,9 @@ def test_perceptron_and_gate():
 
     # O perceptron deve conseguir aprender AND perfeitamente
     acc = accuracy_score(y, predictions)
-    assert acc >= 0.75, f"Perceptron deve aprender AND com acurácia >= 75%, obteve {acc}"
+    assert (
+        acc >= 0.75
+    ), f"Perceptron deve aprender AND com acurácia >= 75%, obteve {acc}"
 
 
 def test_perceptron_linearly_separable():
@@ -124,7 +137,9 @@ def test_perceptron_linearly_separable():
     acc = accuracy_score(y, predictions)
 
     # Para dados linearmente separáveis sem ruído, deve conseguir alta acurácia
-    assert acc >= 0.9, f"Perceptron deve ter alta acurácia em dados linearmente separáveis, obteve {acc}"
+    assert (
+        acc >= 0.9
+    ), f"Perceptron deve ter alta acurácia em dados linearmente separáveis, obteve {acc}"
 
 
 def test_perceptron_predict_shape():
@@ -141,7 +156,9 @@ def test_perceptron_predict_shape():
 
     # Múltiplas predições
     pred_multiple = p.predict(X)
-    assert len(pred_multiple) == 3, "Predições múltiplas devem ter mesmo tamanho que entrada"
+    assert (
+        len(pred_multiple) == 3
+    ), "Predições múltiplas devem ter mesmo tamanho que entrada"
 
     # Verificar se predições são 0 ou 1
     assert all(p in [0, 1] for p in pred_multiple), "Predições devem ser 0 ou 1"

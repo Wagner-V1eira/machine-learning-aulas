@@ -3,7 +3,6 @@ Testes automatizados para o exercício de otimização de modelos
 """
 
 import numpy as np
-import pandas as pd
 import pytest
 from sklearn.datasets import load_wine
 from sklearn.ensemble import RandomForestClassifier
@@ -40,7 +39,9 @@ class TestModelOptimization:
         # Verificar proporções aproximadas (70-30)
         total_samples = len(self.X)
         train_ratio = len(self.X_train) / total_samples
-        assert 0.65 <= train_ratio <= 0.75, f"Ratio treino deve ser ~0.7, got {train_ratio}"
+        assert (
+            0.65 <= train_ratio <= 0.75
+        ), f"Ratio treino deve ser ~0.7, got {train_ratio}"
 
     def test_stratified_cv_manual(self):
         """Testa implementação manual de stratified CV"""
@@ -71,7 +72,9 @@ class TestModelOptimization:
         assert len(scores) == 5, f"Esperado 5 scores, got {len(scores)}"
 
         # Verificar se scores são razoáveis (entre 0 e 1)
-        assert all(0 <= score <= 1 for score in scores), "Scores devem estar entre 0 e 1"
+        assert all(
+            0 <= score <= 1 for score in scores
+        ), "Scores devem estar entre 0 e 1"
 
         # Verificar se média está em range razoável para este dataset
         mean_score = np.mean(scores)
@@ -87,7 +90,9 @@ class TestModelOptimization:
 
         cv_results = {}
         for name, model in models.items():
-            scores = cross_val_score(model, self.X_train, self.y_train, cv=5, scoring="accuracy")
+            scores = cross_val_score(
+                model, self.X_train, self.y_train, cv=5, scoring="accuracy"
+            )
             cv_results[name] = scores
 
         # Verificar se todos os modelos foram testados
@@ -100,7 +105,11 @@ class TestModelOptimization:
 
     def test_random_forest_grid_search(self):
         """Testa otimização do Random Forest com Grid Search"""
-        rf_param_grid = {"n_estimators": [50, 100], "max_depth": [3, 5, None], "min_samples_split": [2, 5]}
+        rf_param_grid = {
+            "n_estimators": [50, 100],
+            "max_depth": [3, 5, None],
+            "min_samples_split": [2, 5],
+        }
 
         rf_grid = GridSearchCV(
             RandomForestClassifier(random_state=42),
@@ -121,14 +130,20 @@ class TestModelOptimization:
         baseline_mean = np.mean(baseline_scores)
 
         # Grid search deve ser pelo menos tão bom quanto baseline
-        assert rf_grid.best_score_ >= baseline_mean - 0.05, "Grid search não deve piorar muito vs baseline"
+        assert (
+            rf_grid.best_score_ >= baseline_mean - 0.05
+        ), "Grid search não deve piorar muito vs baseline"
 
     def test_svm_random_search(self):
         """Testa otimização do SVM com Random Search"""
         from scipy.stats import uniform
         from sklearn.model_selection import RandomizedSearchCV
 
-        svm_param_dist = {"C": uniform(0.1, 10), "gamma": ["scale", "auto"], "kernel": ["rbf", "linear"]}
+        svm_param_dist = {
+            "C": uniform(0.1, 10),
+            "gamma": ["scale", "auto"],
+            "kernel": ["rbf", "linear"],
+        }
 
         svm_random = RandomizedSearchCV(
             SVC(random_state=42),
@@ -142,26 +157,37 @@ class TestModelOptimization:
         svm_random.fit(self.X_train, self.y_train)
 
         # Verificar se funcionou
-        assert hasattr(svm_random, "best_params_"), "Random search deve ter best_params_"
+        assert hasattr(
+            svm_random, "best_params_"
+        ), "Random search deve ter best_params_"
         assert hasattr(svm_random, "best_score_"), "Random search deve ter best_score_"
         assert svm_random.best_score_ > 0.7, "SVM otimizado deve ter score razoável"
 
     def test_pipeline_with_preprocessing(self):
         """Testa pipeline com pré-processamento"""
-        pipe = Pipeline([("scaler", StandardScaler()), ("classifier", SVC(random_state=42))])
+        pipe = Pipeline(
+            [("scaler", StandardScaler()), ("classifier", SVC(random_state=42))]
+        )
 
-        pipe_param_grid = {"classifier__C": [0.1, 1, 10], "classifier__gamma": ["scale", "auto"]}
+        pipe_param_grid = {
+            "classifier__C": [0.1, 1, 10],
+            "classifier__gamma": ["scale", "auto"],
+        }
 
         pipe_grid = GridSearchCV(pipe, pipe_param_grid, cv=3, scoring="accuracy")
 
         pipe_grid.fit(self.X_train, self.y_train)
 
         # Verificar se pipeline funcionou
-        assert hasattr(pipe_grid, "best_estimator_"), "Pipeline deve ter best_estimator_"
+        assert hasattr(
+            pipe_grid, "best_estimator_"
+        ), "Pipeline deve ter best_estimator_"
 
         # Verificar se pode fazer predições
         y_pred = pipe_grid.predict(self.X_test)
-        assert len(y_pred) == len(self.y_test), "Predições devem ter mesmo tamanho que teste"
+        assert len(y_pred) == len(
+            self.y_test
+        ), "Predições devem ter mesmo tamanho que teste"
 
         # Verificar accuracy razoável
         accuracy = accuracy_score(self.y_test, y_pred)
@@ -187,7 +213,9 @@ class TestModelOptimization:
 
         # Verificar se pelo menos um modelo tem performance boa
         best_score = max(test_scores.values())
-        assert best_score > 0.85, f"Melhor modelo deve ter score > 0.85, got {best_score}"
+        assert (
+            best_score > 0.85
+        ), f"Melhor modelo deve ter score > 0.85, got {best_score}"
 
     def test_hyperparameter_improvement(self):
         """Testa se otimização de hiperparâmetros melhora performance"""
@@ -199,7 +227,12 @@ class TestModelOptimization:
         # Random Forest otimizado
         rf_param_grid = {"n_estimators": [50, 100, 200], "max_depth": [3, 5, None]}
 
-        rf_grid = GridSearchCV(RandomForestClassifier(random_state=42), rf_param_grid, cv=3, scoring="accuracy")
+        rf_grid = GridSearchCV(
+            RandomForestClassifier(random_state=42),
+            rf_param_grid,
+            cv=3,
+            scoring="accuracy",
+        )
 
         rf_grid.fit(self.X_train, self.y_train)
 
@@ -212,8 +245,12 @@ class TestModelOptimization:
         model = LogisticRegression(random_state=42, max_iter=1000)
 
         # Executar CV múltiplas vezes com mesmo random_state
-        scores1 = cross_val_score(model, self.X_train, self.y_train, cv=5, random_state=42)
-        scores2 = cross_val_score(model, self.X_train, self.y_train, cv=5, random_state=42)
+        scores1 = cross_val_score(
+            model, self.X_train, self.y_train, cv=5, random_state=42
+        )
+        scores2 = cross_val_score(
+            model, self.X_train, self.y_train, cv=5, random_state=42
+        )
 
         # Resultados devem ser idênticos com mesmo random_state
         np.testing.assert_array_almost_equal(scores1, scores2, decimal=6)
@@ -232,10 +269,14 @@ def test_data_leakage_prevention():
     scaler_wrong = StandardScaler()
     X_scaled_wrong = scaler_wrong.fit_transform(X)  # Fit em todo dataset - ERRADO
 
-    X_train, X_test, y_train, y_test = train_test_split(X_scaled_wrong, y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X_scaled_wrong, y, test_size=0.3, random_state=42
+    )
 
     # Preprocessamento correto
-    X_train_orig, X_test_orig, y_train_orig, y_test_orig = train_test_split(X, y, test_size=0.3, random_state=42)
+    X_train_orig, X_test_orig, y_train_orig, y_test_orig = train_test_split(
+        X, y, test_size=0.3, random_state=42
+    )
 
     scaler_correct = StandardScaler()
     X_train_scaled = scaler_correct.fit_transform(X_train_orig)

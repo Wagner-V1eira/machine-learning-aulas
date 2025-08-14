@@ -1,13 +1,13 @@
 """Testes para o exercício de métricas de regressão."""
 
 import numpy as np
-import pandas as pd
 
 from core.grading.api import load_notebook_funcs
 
 # Carregar funções do notebook do estudante
 student = load_notebook_funcs(
-    "modules/02-regressao/exercises/01_mae_metric.ipynb", allowed_imports={"numpy", "pandas"}
+    "modules/02-regressao/exercises/01_mae_metric.ipynb",
+    allowed_imports={"numpy", "pandas"},
 )
 
 # Extrair funções
@@ -23,10 +23,18 @@ def test_basic():
     y_true = [1, 2, 3]
     y_pred = [1, 2, 3]
 
-    assert abs(mean_absolute_error(y_true, y_pred)) < 0.001, "MAE para previsões perfeitas deve ser 0"
-    assert abs(mean_squared_error(y_true, y_pred)) < 0.001, "MSE para previsões perfeitas deve ser 0"
-    assert abs(root_mean_squared_error(y_true, y_pred)) < 0.001, "RMSE para previsões perfeitas deve ser 0"
-    assert abs(r2_score(y_true, y_pred) - 1.0) < 0.001, "R² para previsões perfeitas deve ser 1"
+    assert (
+        abs(mean_absolute_error(y_true, y_pred)) < 0.001
+    ), "MAE para previsões perfeitas deve ser 0"
+    assert (
+        abs(mean_squared_error(y_true, y_pred)) < 0.001
+    ), "MSE para previsões perfeitas deve ser 0"
+    assert (
+        abs(root_mean_squared_error(y_true, y_pred)) < 0.001
+    ), "RMSE para previsões perfeitas deve ser 0"
+    assert (
+        abs(r2_score(y_true, y_pred) - 1.0) < 0.001
+    ), "R² para previsões perfeitas deve ser 1"
 
 
 def test_mae_simple():
@@ -62,7 +70,9 @@ def test_r2_simple():
     y_pred = [1, 2, 3, 4, 5]  # Previsão perfeita
 
     r2 = r2_score(y_true, y_pred)
-    assert abs(r2 - 1.0) < 0.001, f"R² para previsões perfeitas deve ser 1, obtido: {r2}"
+    assert (
+        abs(r2 - 1.0) < 0.001
+    ), f"R² para previsões perfeitas deve ser 1, obtido: {r2}"
 
 
 def test_r2_worst_case():
@@ -83,11 +93,13 @@ def test_evaluate_regression():
 
     # Verificar se retorna dicionário com chaves corretas
     expected_keys = {"mae", "mse", "rmse", "r2"}
-    assert set(metrics.keys()) == expected_keys, f"Chaves esperadas: {expected_keys}, obtidas: {set(metrics.keys())}"
+    assert (
+        set(metrics.keys()) == expected_keys
+    ), f"Chaves esperadas: {expected_keys}, obtidas: {set(metrics.keys())}"
 
     # Verificar se valores são numéricos
     for metric, value in metrics.items():
-        assert isinstance(value, (int, float)), f"Métrica {metric} deve ser numérica"
+        assert isinstance(value, int | float), f"Métrica {metric} deve ser numérica"
 
 
 def test_random_hidden():
@@ -112,7 +124,9 @@ def test_edge_cases():
     y_true = np.array([1, 2, 3])
     y_pred = np.array([1, 2, 3])
 
-    assert abs(mean_absolute_error(y_true, y_pred)) < 0.001, "Deve funcionar com arrays numpy"
+    assert (
+        abs(mean_absolute_error(y_true, y_pred)) < 0.001
+    ), "Deve funcionar com arrays numpy"
 
     # Teste com listas
     y_true = [10, 20, 30]

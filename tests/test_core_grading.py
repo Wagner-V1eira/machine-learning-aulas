@@ -3,8 +3,6 @@
 import tempfile
 from pathlib import Path
 
-import numpy as np
-import pandas as pd
 import pytest
 
 from core.grading.api import grade_exercise, load_notebook_funcs
@@ -33,9 +31,16 @@ def test_execute_with_timeout_restricted():
 def test_grade_exercise_success():
     """Teste de grading com exercício simples."""
     # Criar notebook temporário
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".ipynb", delete=False
+    ) as nb_file:
         notebook_content = {
-            "cells": [{"cell_type": "code", "source": ["def add_numbers(a, b):\n", "    return a + b"]}]
+            "cells": [
+                {
+                    "cell_type": "code",
+                    "source": ["def add_numbers(a, b):\n", "    return a + b"],
+                }
+            ]
         }
         import json
 
@@ -83,7 +88,9 @@ class TestGradingIntegration:
     def test_simple_function_extraction(self):
         """Teste de extração de função simples."""
         # Criar notebook temporário
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".ipynb", delete=False
+        ) as nb_file:
             notebook_content = {
                 "cells": [
                     {
@@ -116,10 +123,19 @@ class TestGradingIntegration:
 
     def test_forbidden_import(self):
         """Teste de import proibido."""
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".ipynb", delete=False
+        ) as nb_file:
             notebook_content = {
                 "cells": [
-                    {"cell_type": "code", "source": ["import os\n", "def bad_function():\n", "    return os.getcwd()"]}
+                    {
+                        "cell_type": "code",
+                        "source": [
+                            "import os\n",
+                            "def bad_function():\n",
+                            "    return os.getcwd()",
+                        ],
+                    }
                 ]
             }
             import json

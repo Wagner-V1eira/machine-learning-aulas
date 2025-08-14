@@ -1,7 +1,5 @@
 """Testes para execução de notebooks."""
 
-import subprocess
-import sys
 from pathlib import Path
 
 
@@ -30,11 +28,11 @@ def test_notebooks_have_valid_json():
     notebook_files.extend(list(project_root.glob("modules/**/exercises/*.ipynb")))
 
     for notebook_path in notebook_files:
-        with open(notebook_path, "r", encoding="utf-8") as f:
+        with open(notebook_path, encoding="utf-8") as f:
             try:
                 json.load(f)
             except json.JSONDecodeError as e:
-                assert False, f"JSON inválido em {notebook_path}: {e}"
+                raise AssertionError(f"JSON inválido em {notebook_path}: {e}") from e
 
 
 def test_exercise_notebooks_have_solutions():
@@ -44,10 +42,12 @@ def test_exercise_notebooks_have_solutions():
     exercise_notebooks = list(project_root.glob("modules/**/exercises/*.ipynb"))
 
     for notebook_path in exercise_notebooks:
-        with open(notebook_path, "r", encoding="utf-8") as f:
+        with open(notebook_path, encoding="utf-8") as f:
             content = f.read()
             # Verificar se não há apenas TODOs vazios
-            assert "TODO" in content, f"Notebook {notebook_path} deve ter TODOs para exercícios"
+            assert (
+                "TODO" in content
+            ), f"Notebook {notebook_path} deve ter TODOs para exercícios"
 
 
 class TestNotebookStructure:
@@ -62,17 +62,25 @@ class TestNotebookStructure:
         lesson_notebooks = list(project_root.glob("modules/**/lessons/*.ipynb"))
 
         for notebook_path in lesson_notebooks:
-            with open(notebook_path, "r", encoding="utf-8") as f:
+            with open(notebook_path, encoding="utf-8") as f:
                 notebook = json.load(f)
 
             # Verificar se tem células
             assert "cells" in notebook, f"Notebook {notebook_path} deve ter células"
-            assert len(notebook["cells"]) > 0, f"Notebook {notebook_path} deve ter pelo menos uma célula"
+            assert (
+                len(notebook["cells"]) > 0
+            ), f"Notebook {notebook_path} deve ter pelo menos uma célula"
 
             # Verificar se primeira célula é markdown com título
             first_cell = notebook["cells"][0]
-            assert first_cell["cell_type"] == "markdown", f"Primeira célula de {notebook_path} deve ser markdown"
+            assert (
+                first_cell["cell_type"] == "markdown"
+            ), f"Primeira célula de {notebook_path} deve ser markdown"
 
             # Verificar se há células de código
-            code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
-            assert len(code_cells) > 0, f"Notebook {notebook_path} deve ter pelo menos uma célula de código"
+            code_cells = [
+                cell for cell in notebook["cells"] if cell["cell_type"] == "code"
+            ]
+            assert (
+                len(code_cells) > 0
+            ), f"Notebook {notebook_path} deve ter pelo menos uma célula de código"

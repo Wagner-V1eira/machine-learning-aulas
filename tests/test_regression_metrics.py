@@ -17,7 +17,9 @@ def test_mean_absolute_error():
 
     # Teste com previsões perfeitas
     mae_perfect = mean_absolute_error(y_true, y_pred)
-    assert mae_perfect == 0.0, f"MAE deveria ser 0 para previsões perfeitas, obtido: {mae_perfect}"
+    assert (
+        mae_perfect == 0.0
+    ), f"MAE deveria ser 0 para previsões perfeitas, obtido: {mae_perfect}"
 
     # Teste com erros conhecidos
     y_true = [1, 2, 3, 4, 5]
@@ -38,7 +40,9 @@ def test_mean_squared_error():
     y_pred = [1, 2, 3, 4, 5]
 
     mse_perfect = mean_squared_error(y_true, y_pred)
-    assert mse_perfect == 0.0, f"MSE deveria ser 0 para previsões perfeitas, obtido: {mse_perfect}"
+    assert (
+        mse_perfect == 0.0
+    ), f"MSE deveria ser 0 para previsões perfeitas, obtido: {mse_perfect}"
 
     # Teste com erros conhecidos
     y_true = [1, 2, 3, 4, 5]
@@ -59,7 +63,9 @@ def test_root_mean_squared_error():
     y_pred = [1, 2, 3, 4, 5]
 
     rmse_perfect = root_mean_squared_error(y_true, y_pred)
-    assert rmse_perfect == 0.0, f"RMSE deveria ser 0 para previsões perfeitas, obtido: {rmse_perfect}"
+    assert (
+        rmse_perfect == 0.0
+    ), f"RMSE deveria ser 0 para previsões perfeitas, obtido: {rmse_perfect}"
 
     # Teste com erros conhecidos
     y_true = [1, 2, 3, 4, 5]
@@ -80,14 +86,18 @@ def test_r2_score():
     y_pred = [1, 2, 3, 4, 5]
 
     r2_perfect = r2_score(y_true, y_pred)
-    assert r2_perfect == 1.0, f"R² deveria ser 1.0 para previsões perfeitas, obtido: {r2_perfect}"
+    assert (
+        r2_perfect == 1.0
+    ), f"R² deveria ser 1.0 para previsões perfeitas, obtido: {r2_perfect}"
 
     # Teste com previsões = média (R² = 0)
     y_true = [1, 2, 3, 4, 5]
     y_pred = [3, 3, 3, 3, 3]  # Todas as previsões = média
 
     r2_mean = r2_score(y_true, y_pred)
-    assert abs(r2_mean - 0.0) < 1e-10, f"R² deveria ser ~0.0 para previsões = média, obtido: {r2_mean}"
+    assert (
+        abs(r2_mean - 0.0) < 1e-10
+    ), f"R² deveria ser ~0.0 para previsões = média, obtido: {r2_mean}"
 
 
 def test_evaluate_regression():
@@ -103,7 +113,9 @@ def test_evaluate_regression():
 
     # Verificar se todas as métricas estão presentes
     expected_keys = {"mae", "mse", "rmse", "r2"}
-    assert set(metrics.keys()) == expected_keys, f"Métricas esperadas: {expected_keys}, obtidas: {set(metrics.keys())}"
+    assert (
+        set(metrics.keys()) == expected_keys
+    ), f"Métricas esperadas: {expected_keys}, obtidas: {set(metrics.keys())}"
 
     # Verificar valores para previsões perfeitas
     assert metrics["mae"] == 0.0, f"MAE deveria ser 0.0, obtido: {metrics['mae']}"

@@ -1,0 +1,24 @@
+slug: "08-redes-neurais"
+title: "Redes Neurais"
+order: 8
+prerequisites: ["01-fundamentos", "02-regressao", "03-classificacao"]
+outcomes:
+  - "Compreender o funcionamento de neurônios artificiais"
+  - "Implementar perceptron simples"
+  - "Explicar backpropagation básico"
+  - "Treinar MLPs para problemas simples"
+lessons:
+  - slug: "01_perceptron"
+    title: "Perceptron e Neurônio Artificial"
+    notebook: "lessons/01_perceptron.ipynb"
+    est_time_min: 50
+  - slug: "02_mlp_backprop"
+    title: "MLP e Backpropagation"
+    notebook: "lessons/02_mlp_backprop.ipynb"
+    est_time_min: 60
+exercises:
+  - slug: "01_perceptron_impl"
+    title: "Implementando Perceptron"
+    notebook: "exercises/01_perceptron_impl.ipynb"
+    tests: "exercises/01_perceptron_impl_tests.py"
+    max_score: 100

@@ -1,0 +1,25 @@
+slug: "09-deep-learning"
+title: "Deep Learning"
+order: 9
+prerequisites:
+  ["01-fundamentos", "02-regressao", "03-classificacao", "08-redes-neurais"]
+outcomes:
+  - "Compreender frameworks de deep learning"
+  - "Implementar redes neurais com PyTorch"
+  - "Treinar modelos para problemas complexos"
+  - "Aplicar técnicas de regularização em DL"
+lessons:
+  - slug: "01_pytorch_intro"
+    title: "Introdução ao PyTorch"
+    notebook: "lessons/01_pytorch_intro.ipynb"
+    est_time_min: 60
+  - slug: "02_deep_networks"
+    title: "Redes Neurais Profundas"
+    notebook: "lessons/02_deep_networks.ipynb"
+    est_time_min: 70
+exercises:
+  - slug: "01_pytorch_basic"
+    title: "PyTorch Básico"
+    notebook: "exercises/01_pytorch_basic.ipynb"
+    tests: "exercises/01_pytorch_basic_tests.py"
+    max_score: 100

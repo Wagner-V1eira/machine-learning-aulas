@@ -1,0 +1,34 @@
+slug: "03-classificacao"
+title: "Classificação Supervisionada"
+order: 3
+prerequisites: ["01-fundamentos", "02-regressao"]
+outcomes:
+  - "Compreender algoritmos de classificação"
+  - "Implementar regressão logística"
+  - "Aplicar SVM para classificação"
+  - "Usar árvores de decisão e random forests"
+  - "Avaliar modelos de classificação"
+lessons:
+  - slug: "01_logistica"
+    title: "Regressão Logística"
+    notebook: "lessons/01_regressao_logistica.ipynb"
+    est_time_min: 45
+  - slug: "02_svm"
+    title: "Support Vector Machines"
+    notebook: "lessons/02_svm.ipynb"
+    est_time_min: 40
+  - slug: "03_arvores"
+    title: "Árvores de Decisão e Random Forest"
+    notebook: "lessons/03_arvores_decisao.ipynb"
+    est_time_min: 50
+exercises:
+  - slug: "01_metrics_clf"
+    title: "Implementar Métricas de Classificação"
+    notebook: "exercises/01_classification_metrics.ipynb"
+    tests: "exercises/01_classification_metrics_tests.py"
+    max_score: 100
+  - slug: "02_logistic_impl"
+    title: "Implementar Regressão Logística"
+    notebook: "exercises/02_logistic_implementation.ipynb"
+    tests: "exercises/02_logistic_implementation_tests.py"
+    max_score: 150

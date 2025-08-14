@@ -1,0 +1,34 @@
+slug: "07-series-temporais"
+title: "Séries Temporais"
+order: 7
+prerequisites: ["01-fundamentos", "02-regressao"]
+outcomes:
+  - "Compreender dados temporais"
+  - "Implementar divisão temporal"
+  - "Detectar tendências e sazonalidade"
+  - "Aplicar modelos para séries temporais"
+  - "Avaliar previsões temporais"
+lessons:
+  - slug: "01_fundamentos_ts"
+    title: "Fundamentos de Séries Temporais"
+    notebook: "lessons/01_fundamentos_series_temporais.ipynb"
+    est_time_min: 45
+  - slug: "02_preprocessing_ts"
+    title: "Pré-processamento Temporal"
+    notebook: "lessons/02_preprocessing_temporal.ipynb"
+    est_time_min: 40
+  - slug: "03_forecasting"
+    title: "Modelos de Previsão"
+    notebook: "lessons/03_forecasting_models.ipynb"
+    est_time_min: 50
+exercises:
+  - slug: "01_time_split"
+    title: "Implementar Divisão Temporal"
+    notebook: "exercises/01_time_series_split.ipynb"
+    tests: "exercises/01_time_series_split_tests.py"
+    max_score: 100
+  - slug: "02_moving_average"
+    title: "Média Móvel"
+    notebook: "exercises/02_moving_average.ipynb"
+    tests: "exercises/02_moving_average_tests.py"
+    max_score: 80

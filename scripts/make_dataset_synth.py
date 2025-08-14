@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Generate synthetic datasets for the course."""
 
-# Add project root to path
 import sys
 from pathlib import Path
 
@@ -9,9 +8,10 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets import make_blobs, make_classification, make_regression
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Setup path before core imports
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-from core.utils.seeds import fix_random_seeds
+from core.utils.seeds import fix_random_seeds  # noqa: E402
 
 
 def generate_regression_dataset() -> pd.DataFrame:
@@ -35,7 +35,12 @@ def generate_classification_dataset() -> pd.DataFrame:
     fix_random_seeds(42)
 
     X, y = make_classification(
-        n_samples=500, n_features=8, n_classes=3, n_redundant=2, n_informative=6, random_state=42
+        n_samples=500,
+        n_features=8,
+        n_classes=3,
+        n_redundant=2,
+        n_informative=6,
+        random_state=42,
     )
 
     # Create feature names
@@ -52,7 +57,9 @@ def generate_clustering_dataset() -> pd.DataFrame:
     """Generate synthetic clustering dataset."""
     fix_random_seeds(42)
 
-    X, y = make_blobs(n_samples=300, centers=4, n_features=2, random_state=42, cluster_std=1.5)
+    X, y = make_blobs(
+        n_samples=300, centers=4, n_features=2, random_state=42, cluster_std=1.5
+    )
 
     # Create DataFrame
     df = pd.DataFrame(X, columns=["x", "y"])

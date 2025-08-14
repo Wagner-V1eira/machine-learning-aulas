@@ -6,10 +6,10 @@ import json
 import sys
 from pathlib import Path
 
-# Add project root to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Setup path before imports
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-from core.grading.api import grade_exercise
+from core.grading.api import grade_exercise  # noqa: E402
 
 
 def main() -> None:
@@ -48,7 +48,7 @@ def main() -> None:
 
     # Display results
     print(f"\n{'='*50}")
-    print(f"RESULTS")
+    print("RESULTS")
     print(f"{'='*50}")
     print(f"Score: {result['score']}/100")
     print(f"Passed: {result['passed_tests']}/{result['total_tests']} tests")
@@ -59,7 +59,7 @@ def main() -> None:
 
     # Show test details
     if result["test_results"]:
-        print(f"\nTest Details:")
+        print("\nTest Details:")
         for test in result["test_results"]:
             status = "✓" if test["passed"] else "✗"
             print(f"  {status} {test['name']}")

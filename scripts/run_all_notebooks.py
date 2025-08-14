@@ -6,13 +6,12 @@ from pathlib import Path
 
 import nbclient
 from nbformat import read as nbread
-from nbformat import write as nbwrite
 from tqdm import tqdm
 
-# Add project root to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Setup path before core imports
+sys.path.insert(0, str(Path(__file__).parent.parent))  # noqa: E402
 
-from core.utils.seeds import fix_random_seeds
+from core.utils.seeds import fix_random_seeds  # noqa: E402
 
 
 def execute_notebook(notebook_path: Path) -> bool:
@@ -27,11 +26,13 @@ def execute_notebook(notebook_path: Path) -> bool:
     """
     try:
         # Read notebook
-        with open(notebook_path, "r", encoding="utf-8") as f:
+        with open(notebook_path, encoding="utf-8") as f:
             nb = nbread(f, as_version=4)
 
         # Execute notebook
-        client = nbclient.NotebookClient(nb, timeout=300, kernel_name="python3")  # 5 minutes max per notebook
+        client = nbclient.NotebookClient(
+            nb, timeout=300, kernel_name="python3"
+        )  # 5 minutes max per notebook
 
         with client.setup_kernel():
             client.execute()

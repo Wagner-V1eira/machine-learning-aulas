@@ -5,12 +5,14 @@
 ### 🎉 **CONCLUÍDO COM SUCESSO:**
 
 **✅ Problema #1: Comandos com "Failed to canonicalize script path"** - **RESOLVIDO**
+
 - ✅ `uv run python scripts/tasks.py fmt` - Funcionando
-- ✅ `uv run python scripts/tasks.py typecheck` - Funcionando  
+- ✅ `uv run python scripts/tasks.py typecheck` - Funcionando
 - ✅ `uv run python scripts/tasks.py test` - Funcionando
 - **Solução:** Modificado para usar `python -m [ferramenta]`
 
 **✅ Problema #2: Problemas de Qualidade de Código (Lint)** - **RESOLVIDO**
+
 - ✅ `uv run python scripts/tasks.py lint` - Funcionando perfeitamente
 - **Resultado:** 75 erros → 0 erros
 - **Método:** 70 correções automáticas + 5 correções manuais
@@ -18,14 +20,17 @@
 ### ⏸️ **AINDA PENDENTE:**
 
 **❌ Problema #3: Execução de Notebooks Falhando** - **A INVESTIGAR**
+
 - ❌ `uv run python scripts/tasks.py run-notebooks` - Todos os 9 notebooks falharam
 - **Causa:** Warnings ProactorEventLoop + problemas diversos
 
 **⚠️ Problema #4: Erros de Tipos (typecheck)** - **FUNCIONANDO MAS COM ERROS**
+
 - ⚠️ `uv run python scripts/tasks.py typecheck` - 15 erros de tipos
 - **Causa:** Falta de stubs, tipos missing, etc.
 
 **⚠️ Problema #5: Testes Falhando** - **FUNCIONANDO MAS COM FALHAS**
+
 - ⚠️ `uv run python scripts/tasks.py test` - 11 testes falharam
 - **Causa:** Arquivos missing, problemas de notebook format, etc.
 
@@ -182,6 +187,7 @@
 **✅ CONCLUÍDO:** Comandos UV principais funcionando no Windows
 
 **🎯 Para continuar (Fases 3-4):**
+
 1. **Investigar falhas nos notebooks** - `run-notebooks` comando
 2. **Resolver erros de tipos** - melhorar type hints e instalar stubs
 3. **Corrigir testes falhando** - arquivos missing + notebook format
@@ -189,6 +195,7 @@
 5. **Documentar troubleshooting** - adicionar seção no README
 
 **📊 Status Final desta Sessão:**
+
 - ✅ 5 comandos UV funcionando perfeitamente
 - ✅ 0 erros de lint (era 75)
 - ✅ Código formatado e limpo
@@ -196,19 +203,19 @@
 
 **Meta alcançada:** Comandos críticos de desenvolvimento agora funcionam! 🎉
 
-| Comando         | Status               | Prioridade | Estimativa |
-| --------------- | -------------------- | ---------- | ---------- |
-| `setup`         | ✅ OK                | -          | -          |
-| `install`       | ✅ OK                | -          | -          |
-| `help`          | ✅ OK                | -          | -          |
-| `grade`         | ✅ OK                | -          | -          |
-| `clean`         | ✅ OK                | -          | -          |
-| `update`        | ✅ OK                | -          | -          |
+| Comando         | Status               | Prioridade  | Estimativa  |
+| --------------- | -------------------- | ----------- | ----------- |
+| `setup`         | ✅ OK                | -           | -           |
+| `install`       | ✅ OK                | -           | -           |
+| `help`          | ✅ OK                | -           | -           |
+| `grade`         | ✅ OK                | -           | -           |
+| `clean`         | ✅ OK                | -           | -           |
+| `update`        | ✅ OK                | -           | -           |
 | `lint`          | ✅ OK                | ✅ Completo | ✅ Completo |
 | `fmt`           | ✅ OK                | ✅ Completo | ✅ Completo |
-| `typecheck`     | ⚠️ Funciona c/ erros | � Média    | 1h         |
-| `test`          | ⚠️ Funciona c/ erros | � Média    | 1h         |
-| `run-notebooks` | ❌ Notebooks falham  | 🟡 Média   | 2h         |
+| `typecheck`     | ⚠️ Funciona c/ erros | � Média     | 1h          |
+| `test`          | ⚠️ Funciona c/ erros | � Média     | 1h          |
+| `run-notebooks` | ❌ Notebooks falham  | 🟡 Média    | 2h          |
 
 ---
 

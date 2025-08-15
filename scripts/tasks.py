@@ -10,10 +10,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+import yaml
 
-def run_command(
-    cmd: list[str], cwd: Path | None = None, check: bool = True
-) -> subprocess.CompletedProcess[bytes]:
+
+def run_command(cmd: list[str], cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess[bytes]:
     """Executa um comando e retorna o resultado."""
     print(f"→ Executando: {' '.join(cmd)}")
     return subprocess.run(cmd, cwd=cwd, check=check)
@@ -117,6 +117,43 @@ def test() -> None:
     print("✅ Testes concluídos!")
 
 
+def test_status() -> None:
+    """Mostra status dos módulos para testes."""
+    print("📊 Status dos Módulos para Testes:")
+    print("=" * 60)
+
+    project_root = Path.cwd()
+    modules_dir = project_root / "modules"
+
+    enabled_count = 0
+    disabled_count = 0
+
+    for module_dir in sorted(modules_dir.iterdir()):
+        if module_dir.is_dir():
+            yaml_path = module_dir / "module.yaml"
+            if yaml_path.exists():
+                with open(yaml_path, encoding="utf-8") as f:
+                    module_data = yaml.safe_load(f)
+
+                test_enabled = module_data.get("test_enabled", True)
+                if test_enabled:
+                    status = "✅ HABILITADO"
+                    enabled_count += 1
+                else:
+                    status = "❌ DESABILITADO"
+                    disabled_count += 1
+
+                print(f"{module_data['slug']:20} | {status:15} | {module_data['title']}")
+            else:
+                print(f"{module_dir.name:20} | ⚠️  SEM YAML     | (module.yaml não encontrado)")
+
+    print("=" * 60)
+    print(f"Total: {enabled_count} habilitados, {disabled_count} desabilitados")
+
+    if disabled_count > 0:
+        print("\n💡 Para gerenciar status: python scripts/manage_tests.py [enable|disable] <module-slug>")
+
+
 def run_notebooks() -> None:
     """Executa todos os notebooks."""
     print("📚 Executando notebooks...")
@@ -141,9 +178,7 @@ def grade(module: str, exercise: str) -> None:
         print(f"❌ Arquivo de testes não encontrado: {tests_path}")
         sys.exit(1)
 
-    run_command(
-        ["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path]
-    )
+    run_command(["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path])
     print("✅ Avaliação concluída!")
 
 
@@ -175,6 +210,7 @@ Comandos disponíveis:
   fmt           Formatar código
   typecheck     Verificação de tipos (mypy)
   test          Executar testes unitários
+  test-status   Mostrar status dos módulos para testes
   run-notebooks Executar todos notebooks
   grade         Executar autograder (use --module e --exercise)
   clean         Limpar arquivos temporários
@@ -205,6 +241,7 @@ def main() -> None:
     subparsers.add_parser("fmt", help="Formatar código")
     subparsers.add_parser("typecheck", help="Verificar tipos")
     subparsers.add_parser("test", help="Executar testes")
+    subparsers.add_parser("test-status", help="Mostrar status dos módulos para testes")
     subparsers.add_parser("run-notebooks", help="Executar notebooks")
     subparsers.add_parser("clean", help="Limpar arquivos temporários")
     subparsers.add_parser("install", help="Instalar em modo desenvolvimento")
@@ -213,12 +250,8 @@ def main() -> None:
 
     # Comando grade com argumentos
     grade_parser = subparsers.add_parser("grade", help="Executar autograder")
-    grade_parser.add_argument(
-        "--module", "-m", required=True, help="Módulo (ex: 02-regressao)"
-    )
-    grade_parser.add_argument(
-        "--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)"
-    )
+    grade_parser.add_argument("--module", "-m", required=True, help="Módulo (ex: 02-regressao)")
+    grade_parser.add_argument("--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)")
 
     args = parser.parse_args()
 
@@ -233,6 +266,7 @@ def main() -> None:
         "fmt": fmt,
         "typecheck": typecheck,
         "test": test,
+        "test-status": test_status,
         "run-notebooks": run_notebooks,
         "clean": clean,
         "install": install,

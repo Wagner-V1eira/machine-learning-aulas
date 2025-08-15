@@ -2,6 +2,8 @@ slug: "08-redes-neurais"
 title: "Redes Neurais"
 order: 8
 prerequisites: ["01-fundamentos", "02-regressao", "03-classificacao"]
+# Módulo em desenvolvimento - desabilitar testes temporariamente
+test_enabled: false
 outcomes:
   - "Compreender o funcionamento de neurônios artificiais"
   - "Implementar perceptron simples"

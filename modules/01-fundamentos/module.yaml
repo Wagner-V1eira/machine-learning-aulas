@@ -2,6 +2,8 @@ slug: "01-fundamentos"
 title: "Fundamentos de Machine Learning"
 order: 1
 prerequisites: []
+# Controle de testes (opcional)
+test_enabled: true # Se false, pula todos os testes deste módulo
 outcomes:
   - "Explicar os conceitos básicos de Machine Learning"
   - "Distinguir entre aprendizado supervisionado, não supervisionado e por reforço"
@@ -12,13 +14,16 @@ lessons:
     title: "Introdução ao Machine Learning"
     notebook: "lessons/01_intro.ipynb"
     est_time_min: 45
+    test_enabled: true # Opcional: controla teste desta lição específica
   - slug: "02_fluxo_ml"
     title: "Fluxo de Projeto ML"
     notebook: "lessons/02_fluxo_ml.ipynb"
     est_time_min: 40
+    test_enabled: true
 exercises:
   - slug: "01_preprocess"
     title: "Pré-processamento Básico"
     notebook: "exercises/01_preprocess.ipynb"
     tests: "exercises/01_preprocess_tests.py"
-    max_score: 100
+    max_score: 10
+    test_enabled: true # Opcional: controla teste deste exercício específico0

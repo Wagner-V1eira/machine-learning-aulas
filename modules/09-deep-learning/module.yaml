@@ -3,6 +3,8 @@ title: "Deep Learning"
 order: 9
 prerequisites:
   ["01-fundamentos", "02-regressao", "03-classificacao", "08-redes-neurais"]
+# Módulo em desenvolvimento - arquivos ainda não criados
+test_enabled: false
 outcomes:
   - "Compreender frameworks de deep learning"
   - "Implementar redes neurais com PyTorch"

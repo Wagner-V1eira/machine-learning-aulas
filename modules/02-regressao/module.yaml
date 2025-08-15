@@ -2,6 +2,8 @@ slug: "02-regressao"
 title: "Regressão Supervisionada"
 order: 2
 prerequisites: ["01-fundamentos"]
+# Módulo habilitado para testes
+test_enabled: true
 outcomes:
   - "Explicar MSE/MAE/R2 e overfitting"
   - "Treinar e validar Regressão Linear e Ridge/Lasso"

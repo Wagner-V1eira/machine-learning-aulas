@@ -56,7 +56,13 @@ uv run python scripts/tasks.py typecheck      # Verificação de tipos (mypy)
 
 # 🧪 Testes
 uv run python scripts/tasks.py test           # Executar testes unitários
+uv run python scripts/tasks.py test-status    # Ver status dos módulos para testes
 uv run python scripts/tasks.py run-notebooks  # Executar todos notebooks
+
+# 🎛️ Controle de Módulos (para desenvolvimento)
+uv run python scripts/manage_tests.py enable 08-redes-neurais   # Habilitar módulo para testes
+uv run python scripts/manage_tests.py disable 03-classificacao  # Desabilitar módulo temporariamente
+uv run python scripts/manage_tests.py list                      # Listar status detalhado
 
 # 📝 Avaliação
 uv run python scripts/tasks.py grade --module 02-regressao --exercise 01_mae_metric
@@ -68,6 +74,8 @@ uv run python scripts/tasks.py update         # Atualizar dependências
 # ❓ Ajuda
 uv run python scripts/tasks.py help           # Ver todos os comandos
 ```
+
+> **📝 Nota**: Módulos desabilitados não são testados, permitindo desenvolvimento iterativo sem quebrar o pipeline de testes.
 
 ### Modo Direto (Opcional)
 

@@ -26,13 +26,13 @@ echo "✅ Python $python_version detectado"
 if ! command -v uv &> /dev/null; then
     echo "📦 Instalando UV..."
     pip install uv
+else
+    echo "✅ UV já está instalado"
 fi
-
-echo "✅ UV instalado"
 
 # Configurar ambiente
 echo "⚙️ Configurando ambiente..."
-uv sync --all-extras
+uv run python scripts/tasks.py setup
 
 echo "📚 Instalando projeto em modo desenvolvimento..."
 uv run python scripts/tasks.py install
@@ -43,7 +43,7 @@ echo ""
 echo "Comandos disponíveis:"
 echo "  uv run python scripts/tasks.py help     # Ver todos os comandos"
 echo "  uv run python scripts/tasks.py test     # Executar testes"
-echo "  ml-curso lint                           # Verificar código"
+echo "  uv run python scripts/tasks.py lint     # Verificar código"
 echo ""
 echo "Para começar:"
 echo "  cd modules/01-fundamentos/lessons/"

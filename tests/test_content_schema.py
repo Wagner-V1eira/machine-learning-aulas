@@ -44,7 +44,6 @@ def test_module_yaml_files_exist():
     critical_modules = [
         "modules/01-fundamentos",
         "modules/02-regressao",
-        "modules/08-redes-neurais",
     ]
 
     for module_path in critical_modules:

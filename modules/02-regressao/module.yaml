@@ -14,10 +14,11 @@ lessons:
     title: "Regressão Linear"
     notebook: "lessons/01_reg_linear.ipynb"
     est_time_min: 45
+    test_enabled: true
 exercises:
   - slug: "01_mae_metric"
     title: "Implementando MAE"
     notebook: "exercises/01_mae_metric.ipynb"
     tests: "exercises/01_mae_metric_tests.py"
     max_score: 100
-    test_enabled: false
+    test_enabled: true

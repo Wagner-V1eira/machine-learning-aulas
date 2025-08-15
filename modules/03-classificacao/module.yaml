@@ -3,7 +3,7 @@ title: "Classificação Supervisionada"
 order: 3
 prerequisites: ["01-fundamentos", "02-regressao"]
 # Módulo em desenvolvimento - alguns arquivos ainda não existem
-test_enabled: false
+test_enabled: true
 outcomes:
   - "Compreender algoritmos de classificação"
   - "Implementar regressão logística"
@@ -15,22 +15,27 @@ lessons:
     title: "Regressão Logística"
     notebook: "lessons/01_regressao_logistica.ipynb"
     est_time_min: 45
+    test_enabled: true
   - slug: "02_svm"
     title: "Support Vector Machines"
     notebook: "lessons/02_svm.ipynb"
     est_time_min: 40
+    test_enabled: false
   - slug: "03_arvores"
     title: "Árvores de Decisão e Random Forest"
     notebook: "lessons/03_arvores_decisao.ipynb"
     est_time_min: 50
+    test_enabled: false
 exercises:
   - slug: "01_metrics_clf"
     title: "Implementar Métricas de Classificação"
     notebook: "exercises/01_classification_metrics.ipynb"
     tests: "exercises/01_classification_metrics_tests.py"
     max_score: 100
+    test_enabled: true
   - slug: "02_logistic_impl"
     title: "Implementar Regressão Logística"
     notebook: "exercises/02_logistic_implementation.ipynb"
     tests: "exercises/02_logistic_implementation_tests.py"
     max_score: 150
+    test_enabled: false

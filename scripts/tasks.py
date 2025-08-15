@@ -149,9 +149,11 @@ def test_status() -> None:
 
     print("=" * 60)
     print(f"Total: {enabled_count} habilitados, {disabled_count} desabilitados")
-    
+
     if disabled_count > 0:
         print("\n💡 Para gerenciar status: uv run python scripts/manage_tests.py [enable|disable] <module-slug>")
+
+
 def run_notebooks() -> None:
     """Executa todos os notebooks."""
     print("📚 Executando notebooks...")

@@ -49,7 +49,9 @@ def test_exercise_notebooks_have_solutions():
         with open(notebook_path, encoding="utf-8") as f:
             content = f.read()
             # Verificar se não há apenas TODOs vazios
-            assert "TODO" in content, f"Notebook {notebook_path} deve ter TODOs para exercícios"
+            assert (
+                "TODO" in content
+            ), f"Notebook {notebook_path} deve ter TODOs para exercícios"
 
 
 class TestNotebookStructure:
@@ -69,12 +71,20 @@ class TestNotebookStructure:
 
             # Verificar se tem células
             assert "cells" in notebook, f"Notebook {notebook_path} deve ter células"
-            assert len(notebook["cells"]) > 0, f"Notebook {notebook_path} deve ter pelo menos uma célula"
+            assert (
+                len(notebook["cells"]) > 0
+            ), f"Notebook {notebook_path} deve ter pelo menos uma célula"
 
             # Verificar se primeira célula é markdown com título
             first_cell = notebook["cells"][0]
-            assert first_cell["cell_type"] == "markdown", f"Primeira célula de {notebook_path} deve ser markdown"
+            assert (
+                first_cell["cell_type"] == "markdown"
+            ), f"Primeira célula de {notebook_path} deve ser markdown"
 
             # Verificar se há células de código
-            code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
-            assert len(code_cells) > 0, f"Notebook {notebook_path} deve ter pelo menos uma célula de código"
+            code_cells = [
+                cell for cell in notebook["cells"] if cell["cell_type"] == "code"
+            ]
+            assert (
+                len(code_cells) > 0
+            ), f"Notebook {notebook_path} deve ter pelo menos uma célula de código"

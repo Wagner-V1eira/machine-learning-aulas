@@ -57,7 +57,9 @@ def execute_notebook(notebook_path: Path) -> bool:
                 print(f"✓ {notebook_path.relative_to(Path.cwd())}")
                 return True
             else:
-                error_msg = result.stderr.strip() or result.stdout.strip() or "Unknown error"
+                error_msg = (
+                    result.stderr.strip() or result.stdout.strip() or "Unknown error"
+                )
                 print(f"✗ {notebook_path.relative_to(Path.cwd())}: {error_msg}")
                 return False
 

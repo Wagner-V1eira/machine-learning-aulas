@@ -31,7 +31,9 @@ def test_execute_with_timeout_restricted():
 def test_grade_exercise_success():
     """Teste de grading com exercício simples."""
     # Criar notebook temporário
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".ipynb", delete=False
+    ) as nb_file:
         notebook_content = {
             "nbformat": 4,
             "nbformat_minor": 4,
@@ -92,7 +94,9 @@ class TestGradingIntegration:
     def test_simple_function_extraction(self):
         """Teste de extração de função simples."""
         # Criar notebook temporário
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".ipynb", delete=False
+        ) as nb_file:
             notebook_content = {
                 "nbformat": 4,
                 "nbformat_minor": 4,
@@ -131,7 +135,9 @@ class TestGradingIntegration:
 
     def test_forbidden_import(self):
         """Teste de import proibido."""
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".ipynb", delete=False) as nb_file:
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".ipynb", delete=False
+        ) as nb_file:
             notebook_content = {
                 "nbformat": 4,
                 "nbformat_minor": 4,

@@ -26,7 +26,9 @@ def setup_plotting_style() -> None:
 
 
 def plot_regression_results(
-    y_true: np.ndarray[Any, np.dtype[Any]], y_pred: np.ndarray[Any, np.dtype[Any]], title: str | None = None
+    y_true: np.ndarray[Any, np.dtype[Any]],
+    y_pred: np.ndarray[Any, np.dtype[Any]],
+    title: str | None = None,
 ) -> Figure:
     """
     Plot regression results (actual vs predicted).

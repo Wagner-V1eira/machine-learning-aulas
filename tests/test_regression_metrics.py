@@ -7,7 +7,7 @@ from core.grading.api import load_notebook_funcs
 
 def test_mean_absolute_error():
     """Testa a implementação da função mean_absolute_error."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     y_true = [1, 2, 3, 4, 5]
     y_pred = [1, 2, 3, 4, 5]
@@ -24,7 +24,7 @@ def test_mean_absolute_error():
 
 def test_mean_squared_error():
     """Testa a implementação da função mean_squared_error."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     y_true = [1, 2, 3, 4, 5]
     y_pred = [1, 2, 3, 4, 5]
@@ -41,7 +41,7 @@ def test_mean_squared_error():
 
 def test_root_mean_squared_error():
     """Testa a implementação da função root_mean_squared_error."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     y_true = [1, 2, 3, 4, 5]
     y_pred = [1, 2, 3, 4, 5]
@@ -58,7 +58,7 @@ def test_root_mean_squared_error():
 
 def test_r2_score():
     """Testa a implementação da função r2_score."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     # Teste com previsões perfeitas
     y_true = [1, 2, 3, 4, 5]
@@ -77,7 +77,7 @@ def test_r2_score():
 
 def test_evaluate_regression():
     """Testa a função de avaliação completa."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     y_true = [1, 2, 3, 4, 5]
     y_pred = [1, 2, 3, 4, 5]
@@ -97,7 +97,7 @@ def test_evaluate_regression():
 
 def test_metrics_with_numpy_arrays():
     """Testa se as métricas funcionam com arrays numpy."""
-    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric_complete.ipynb")
+    funcs = load_notebook_funcs("modules/02-regressao/exercises/01_mae_metric.ipynb")
 
     y_true = np.array([1.0, 2.0, 3.0, 4.0, 5.0])
     y_pred = np.array([1.1, 1.9, 3.1, 3.9, 5.1])

@@ -34,10 +34,10 @@ Para novos usuários, use os scripts automáticos:
 
 ```bash
 # Windows
-install.bat
+./install.bat
 
 # Linux/macOS
-./install.sh
+sh install.sh
 ```
 
 ## Comandos UV

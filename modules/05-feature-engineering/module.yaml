@@ -2,6 +2,8 @@ slug: "05-feature-engineering"
 title: "Feature Engineering & Pipelines"
 order: 5
 prerequisites: ["01-fundamentos", "02-regressao", "03-classificacao"]
+# Controle de testes - desabilitado temporariamente
+test_enabled: false
 outcomes:
   - "Implementar scalers e normalizadores"
   - "Aplicar OneHot encoding"

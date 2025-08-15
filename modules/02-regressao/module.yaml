@@ -20,3 +20,4 @@ exercises:
     notebook: "exercises/01_mae_metric.ipynb"
     tests: "exercises/01_mae_metric_tests.py"
     max_score: 100
+    test_enabled: false

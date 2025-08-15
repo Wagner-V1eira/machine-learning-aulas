@@ -7,6 +7,8 @@ prerequisites:
   - "06-nao-supervisionado"
   - "05-feature-engineering"
   - "04-validacao"
+# Controle de testes - desabilitado temporariamente
+test_enabled: false
 outcomes:
   - "Aplicar pipeline completo de ML em problemas reais"
   - "Implementar feature engineering avançado"

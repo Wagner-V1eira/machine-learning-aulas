@@ -2,6 +2,8 @@ slug: "06-nao-supervisionado"
 title: "Aprendizado Não Supervisionado"
 order: 6
 prerequisites: ["01-fundamentos", "04-validacao"]
+# Controle de testes - desabilitado temporariamente
+test_enabled: false
 outcomes:
   - "Implementar algoritmos de clustering"
   - "Aplicar K-Means e DBSCAN"

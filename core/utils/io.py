@@ -10,7 +10,10 @@ import yaml
 def load_yaml(file_path: Path | str) -> dict[str, Any]:
     """Load YAML file."""
     with open(file_path, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        data = yaml.safe_load(f)
+        if isinstance(data, dict):
+            return data
+        return {}
 
 
 def save_yaml(data: dict[str, Any], file_path: Path | str) -> None:
@@ -22,7 +25,8 @@ def save_yaml(data: dict[str, Any], file_path: Path | str) -> None:
 def load_json(file_path: Path | str) -> dict[str, Any]:
     """Load JSON file."""
     with open(file_path, encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+        return data if isinstance(data, dict) else {}
 
 
 def save_json(data: dict[str, Any], file_path: Path | str) -> None:

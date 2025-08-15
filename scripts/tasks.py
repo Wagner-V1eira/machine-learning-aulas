@@ -11,9 +11,7 @@ import sys
 from pathlib import Path
 
 
-def run_command(
-    cmd: list[str], cwd: Path | None = None, check: bool = True
-) -> subprocess.CompletedProcess:
+def run_command(cmd: list[str], cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess[bytes]:
     """Executa um comando e retorna o resultado."""
     print(f"→ Executando: {' '.join(cmd)}")
     return subprocess.run(cmd, cwd=cwd, check=check)
@@ -141,9 +139,7 @@ def grade(module: str, exercise: str) -> None:
         print(f"❌ Arquivo de testes não encontrado: {tests_path}")
         sys.exit(1)
 
-    run_command(
-        ["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path]
-    )
+    run_command(["uv", "run", "python", "scripts/grade_exercise.py", notebook_path, tests_path])
     print("✅ Avaliação concluída!")
 
 
@@ -213,12 +209,8 @@ def main() -> None:
 
     # Comando grade com argumentos
     grade_parser = subparsers.add_parser("grade", help="Executar autograder")
-    grade_parser.add_argument(
-        "--module", "-m", required=True, help="Módulo (ex: 02-regressao)"
-    )
-    grade_parser.add_argument(
-        "--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)"
-    )
+    grade_parser.add_argument("--module", "-m", required=True, help="Módulo (ex: 02-regressao)")
+    grade_parser.add_argument("--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)")
 
     args = parser.parse_args()
 

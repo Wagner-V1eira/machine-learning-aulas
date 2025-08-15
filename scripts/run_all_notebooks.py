@@ -4,8 +4,6 @@
 import sys
 from pathlib import Path
 
-import nbclient
-from nbformat import read as nbread
 from tqdm import tqdm
 
 # Setup path before core imports
@@ -25,21 +23,51 @@ def execute_notebook(notebook_path: Path) -> bool:
         True if execution succeeded, False otherwise
     """
     try:
-        # Read notebook
-        with open(notebook_path, encoding="utf-8") as f:
-            nb = nbread(f, as_version=4)
+        import shutil
+        import subprocess
+        import tempfile
 
-        # Execute notebook
-        client = nbclient.NotebookClient(
-            nb, timeout=300, kernel_name="python3"
-        )  # 5 minutes max per notebook
+        # Create a temporary copy to avoid modifying the original
+        with tempfile.NamedTemporaryFile(suffix=".ipynb", delete=False) as tmp:
+            shutil.copy2(notebook_path, tmp.name)
+            tmp_path = Path(tmp.name)
 
-        with client.setup_kernel():
-            client.execute()
+        try:
+            # Execute notebook using nbconvert
+            result = subprocess.run(
+                [
+                    "uv",
+                    "run",
+                    "jupyter",
+                    "nbconvert",
+                    "--to",
+                    "notebook",
+                    "--execute",
+                    "--inplace",
+                    "--ExecutePreprocessor.timeout=300",
+                    "--ExecutePreprocessor.kernel_name=python3",
+                    str(tmp_path),
+                ],
+                capture_output=True,
+                text=True,
+                timeout=360,
+            )
 
-        print(f"✓ {notebook_path.relative_to(Path.cwd())}")
-        return True
+            if result.returncode == 0:
+                print(f"✓ {notebook_path.relative_to(Path.cwd())}")
+                return True
+            else:
+                error_msg = result.stderr.strip() or result.stdout.strip() or "Unknown error"
+                print(f"✗ {notebook_path.relative_to(Path.cwd())}: {error_msg}")
+                return False
 
+        finally:
+            # Clean up temporary file
+            tmp_path.unlink(missing_ok=True)
+
+    except subprocess.TimeoutExpired:
+        print(f"✗ {notebook_path.relative_to(Path.cwd())}: Timeout after 5 minutes")
+        return False
     except Exception as e:
         print(f"✗ {notebook_path.relative_to(Path.cwd())}: {e}")
         return False

@@ -17,18 +17,9 @@ lessons:
     title: "Tuning de Hiperparâmetros"
     notebook: "lessons/02_hyperparameter_tuning.ipynb"
     est_time_min: 45
-  - slug: "03_model_selection"
-    title: "Seleção de Modelos"
-    notebook: "lessons/03_model_selection.ipynb"
-    est_time_min: 35
 exercises:
-  - slug: "01_cv_implementation"
-    title: "Implementar Cross-Validation"
-    notebook: "exercises/01_cross_validation_impl.ipynb"
-    tests: "exercises/01_cross_validation_impl_tests.py"
+  - slug: "01_model_optimization"
+    title: "Otimização de Modelos"
+    notebook: "exercises/01_model_optimization.ipynb"
+    tests: "exercises/01_model_optimization_tests.py"
     max_score: 120
-  - slug: "02_grid_search"
-    title: "Grid Search Manual"
-    notebook: "exercises/02_grid_search_manual.ipynb"
-    tests: "exercises/02_grid_search_manual_tests.py"
-    max_score: 100

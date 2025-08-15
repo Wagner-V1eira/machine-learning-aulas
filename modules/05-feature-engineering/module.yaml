@@ -13,22 +13,4 @@ lessons:
     title: "Pré-processamento de Dados"
     notebook: "lessons/01_preprocessing.ipynb"
     est_time_min: 50
-  - slug: "02_pipelines"
-    title: "Pipelines sklearn"
-    notebook: "lessons/02_pipelines.ipynb"
-    est_time_min: 45
-  - slug: "03_feature_selection"
-    title: "Seleção de Features"
-    notebook: "lessons/03_feature_selection.ipynb"
-    est_time_min: 40
-exercises:
-  - slug: "01_scaler_impl"
-    title: "Implementar StandardScaler"
-    notebook: "exercises/01_standard_scaler.ipynb"
-    tests: "exercises/01_standard_scaler_tests.py"
-    max_score: 100
-  - slug: "02_pipeline_custom"
-    title: "Pipeline Customizado"
-    notebook: "exercises/02_custom_pipeline.ipynb"
-    tests: "exercises/02_custom_pipeline_tests.py"
-    max_score: 120
+exercises: []

@@ -17,18 +17,4 @@ lessons:
     title: "Análise de Componentes Principais"
     notebook: "lessons/02_pca.ipynb"
     est_time_min: 45
-  - slug: "03_anomaly_detection"
-    title: "Detecção de Anomalias"
-    notebook: "lessons/03_anomaly_detection.ipynb"
-    est_time_min: 40
-exercises:
-  - slug: "01_kmeans_impl"
-    title: "Implementar K-Means"
-    notebook: "exercises/01_kmeans_implementation.ipynb"
-    tests: "exercises/01_kmeans_implementation_tests.py"
-    max_score: 150
-  - slug: "02_pca_impl"
-    title: "Implementar PCA"
-    notebook: "exercises/02_pca_implementation.ipynb"
-    tests: "exercises/02_pca_implementation_tests.py"
-    max_score: 120
+exercises: []

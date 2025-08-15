@@ -33,6 +33,9 @@ dependencies = [
     # Utilities
     "tqdm>=4.65.0",
     "click>=8.1.6",
+    
+    # Data visualization and missing data analysis
+    "missingno>=0.5.2",
 ]
 
 [project.optional-dependencies]
@@ -44,6 +47,10 @@ dev = [
     "mypy==1.5.1",
     "pytest==7.4.0",
     "pytest-cov==4.1.0",
+    
+    # Type stubs
+    "types-PyYAML>=6.0.12",
+    "types-tqdm>=4.66.0",
 ]
 
 [project.scripts]
@@ -61,6 +68,10 @@ dev-dependencies = [
     "mypy==1.5.1",
     "pytest==7.4.0",
     "pytest-cov==4.1.0",
+    
+    # Type stubs
+    "types-PyYAML>=6.0.12",
+    "types-tqdm>=4.66.0",
 ]
 
 [tool.ruff]

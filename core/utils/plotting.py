@@ -1,9 +1,11 @@
 """Plotting utilities for the ML course."""
 
+from typing import Any
 
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from matplotlib.figure import Figure
 
 
 def setup_plotting_style() -> None:
@@ -24,8 +26,8 @@ def setup_plotting_style() -> None:
 
 
 def plot_regression_results(
-    y_true: np.ndarray, y_pred: np.ndarray, title: str | None = None
-) -> plt.Figure:
+    y_true: np.ndarray[Any, np.dtype[Any]], y_pred: np.ndarray[Any, np.dtype[Any]], title: str | None = None
+) -> Figure:
     """
     Plot regression results (actual vs predicted).
 
@@ -62,8 +64,10 @@ def plot_regression_results(
 
 
 def plot_classification_results(
-    y_true: np.ndarray, y_pred: np.ndarray, class_names: list | None = None
-) -> plt.Figure:
+    y_true: np.ndarray[Any, np.dtype[Any]],
+    y_pred: np.ndarray[Any, np.dtype[Any]],
+    class_names: list[str] | None = None,
+) -> Figure:
     """
     Plot classification results (confusion matrix).
 

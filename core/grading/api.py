@@ -8,9 +8,7 @@ from nbformat import read as nbread
 from .sandbox import execute_with_timeout
 
 
-def load_notebook_funcs(
-    notebook_path: str, allowed_imports: set[str] | None = None
-) -> dict[str, Any]:
+def load_notebook_funcs(notebook_path: str, allowed_imports: set[str] | None = None) -> dict[str, Any]:
     """
     Load functions from a notebook after executing it in a sandboxed environment.
 
@@ -33,15 +31,15 @@ def load_notebook_funcs(
             "matplotlib",
             "scipy",
             "seaborn",
+            "typing",
         }
 
-    notebook_path = Path(notebook_path)
-    if not notebook_path.exists():
+    notebook_path_obj = Path(notebook_path)
+    if not notebook_path_obj.exists():
         raise FileNotFoundError(f"Notebook not found: {notebook_path}")
 
     # Read notebook
-    with open(notebook_path, encoding="utf-8") as f:
-        nb = nbread(f, as_version=4)
+    nb = nbread(notebook_path_obj, as_version=4)  # type: ignore[no-untyped-call]
 
     # Extract code cells
     code_cells = [cell for cell in nb.cells if cell.cell_type == "code"]
@@ -91,9 +89,7 @@ def _validate_imports(code: str, allowed_imports: set[str]) -> None:
                     raise ImportError(f"Import not allowed: {module}")
 
 
-def grade_exercise(
-    notebook_path: str, tests_path: str, allowed_imports: set[str] | None = None
-) -> dict[str, Any]:
+def grade_exercise(notebook_path: str, tests_path: str, allowed_imports: set[str] | None = None) -> dict[str, Any]:
     """
     Grade a student exercise notebook.
 
@@ -136,9 +132,7 @@ def grade_exercise(
         }
 
 
-def _execute_tests(
-    tests_path: str, student_funcs: dict[str, Any]
-) -> list[dict[str, Any]]:
+def _execute_tests(tests_path: str, student_funcs: dict[str, Any]) -> list[dict[str, Any]]:
     """Execute test file and return results."""
     import importlib.util
 
@@ -164,12 +158,8 @@ def _execute_tests(
             if callable(test_func):
                 try:
                     test_func()
-                    test_results.append(
-                        {"name": attr_name, "passed": True, "error": None}
-                    )
+                    test_results.append({"name": attr_name, "passed": True, "error": None})
                 except Exception as e:
-                    test_results.append(
-                        {"name": attr_name, "passed": False, "error": str(e)}
-                    )
+                    test_results.append({"name": attr_name, "passed": False, "error": str(e)})
 
     return test_results

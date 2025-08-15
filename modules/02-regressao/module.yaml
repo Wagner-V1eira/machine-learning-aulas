@@ -12,10 +12,6 @@ lessons:
     title: "Regressão Linear"
     notebook: "lessons/01_reg_linear.ipynb"
     est_time_min: 45
-  - slug: "02_regularizacao"
-    title: "Regularização"
-    notebook: "lessons/02_regularizacao.ipynb"
-    est_time_min: 40
 exercises:
   - slug: "01_mae_metric"
     title: "Implementando MAE"

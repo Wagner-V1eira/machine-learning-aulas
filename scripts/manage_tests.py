@@ -107,9 +107,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Gerenciar status de testes de módulos",
         epilog="Exemplos:\n"
-        "  python manage_tests.py list\n"
-        "  python manage_tests.py enable 01-fundamentos\n"
-        "  python manage_tests.py disable 08-redes-neurais",
+        "  uv run python scripts/manage_tests.py list\n"
+        "  uv run python scripts/manage_tests.py enable 01-fundamentos\n"
+        "  uv run python scripts/manage_tests.py disable 08-redes-neurais",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 

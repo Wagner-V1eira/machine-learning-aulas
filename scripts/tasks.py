@@ -149,11 +149,9 @@ def test_status() -> None:
 
     print("=" * 60)
     print(f"Total: {enabled_count} habilitados, {disabled_count} desabilitados")
-
+    
     if disabled_count > 0:
-        print("\n💡 Para gerenciar status: python scripts/manage_tests.py [enable|disable] <module-slug>")
-
-
+        print("\n💡 Para gerenciar status: uv run python scripts/manage_tests.py [enable|disable] <module-slug>")
 def run_notebooks() -> None:
     """Executa todos os notebooks."""
     print("📚 Executando notebooks...")
@@ -219,12 +217,12 @@ Comandos disponíveis:
   help          Mostrar esta ajuda
 
 Exemplos:
-  python scripts/tasks.py setup
-  python scripts/tasks.py grade --module 02-regressao --exercise 01_mae_metric
-  python scripts/tasks.py lint
-
-Ou com UV:
   uv run python scripts/tasks.py setup
+  uv run python scripts/tasks.py grade --module 02-regressao --exercise 01_mae_metric
+  uv run python scripts/tasks.py lint
+
+Ou com UV (modo direto após install):
+  uv run ml-curso setup
   uv run ml-curso grade --module 02-regressao --exercise 01_mae_metric
 """
     )

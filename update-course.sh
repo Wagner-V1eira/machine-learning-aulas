@@ -2,6 +2,8 @@
 
 echo "🔄 Atualizando repositório do curso..."
 
+uv run scripts/tasks.py clean
+
 # Sincronizar dependências
 echo "📦 Atualizando dependências..."
 uv sync

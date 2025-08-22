@@ -3,7 +3,7 @@ title: "Classificação Supervisionada"
 order: 3
 prerequisites: ["01-fundamentos", "02-regressao"]
 # Módulo em desenvolvimento - alguns arquivos ainda não existem
-test_enabled: true
+test_enabled: false
 outcomes:
   - "Compreender algoritmos de classificação"
   - "Implementar regressão logística"

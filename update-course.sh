@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "# Sincronizar dependências
-echo "� Atualizando dependências..."
+echo "🔄 Atualizando repositório do curso..."
+
+# Sincronizar dependências
+echo "📦 Atualizando dependências..."
 uv sync
 
-# Limpar notebooks antes de merge (evitar conflitos)
-echo "🧹 Limpando outputs dos notebooks..."
-uv run scripts/clean-notebooks.py
-
-# Configurar novos exercícios (se houver)
-echo "📚 Configurando novos exercícios..."
-uv run scripts/setup-student.pylizando repositório do curso..."
+# Restaurar notebooks de lessons/exercises (evitar conflitos de formatação)
+echo "🔄 Restaurando notebooks para estado original..."
+git restore modules/*/lessons/*.ipynb modules/*/exercises/*.ipynb
+# Preservar arquivos _aluno que o estudante pode ter modificado
+git restore modules/*/exercises/*_aluno.ipynb modules/*/exercises/*_aluno.py 2>/dev/null || true
 
 # Sincronizar com repositório do professor
 echo "📡 Baixando atualizações do professor..."
@@ -42,6 +42,7 @@ uv run scripts/check-structure.py
 echo "✅ Atualização concluída!"
 echo ""
 echo "📋 Resumo:"
+echo "   • Notebooks restaurados ao estado original"
 echo "   • Novos conteúdos sincronizados"
 echo "   • Dependências atualizadas"  
 echo "   • Exercícios configurados"

@@ -1,18 +1,13 @@
 #!/bin/bash
 
 echo "🔄 Atualizando repositório do curso..."
-
 uv run scripts/tasks.py clean
-
-# Sincronizar dependências
-echo "📦 Atualizando dependências..."
-uv sync
 
 # Restaurar notebooks de lessons/exercises (evitar conflitos de formatação)
 echo "🔄 Restaurando notebooks para estado original..."
-git restore modules/*/lessons/*.ipynb modules/*/exercises/*.ipynb
-# Preservar arquivos _aluno que o estudante pode ter modificado
-git restore modules/*/exercises/*_aluno.ipynb modules/*/exercises/*_aluno.py 2>/dev/null || true
+# Restaurar apenas os arquivos originais do professor (não os _aluno)
+find modules -name "*.ipynb" -not -name "*_aluno.ipynb" -exec git restore {} + 2>/dev/null || true
+# Preservar arquivos _aluno que o estudante pode ter modificado (estes não devem ser restaurados)
 
 # Sincronizar com repositório do professor
 echo "📡 Baixando atualizações do professor..."

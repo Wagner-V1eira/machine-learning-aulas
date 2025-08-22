@@ -2,6 +2,19 @@
 
 > Repositório didático e executável para aprendizado progressivo de Machine Learning com Python e UV.
 
+## 👨‍🏫 Sobre o Projeto
+
+Este repositório foi criado pelo **Prof. Pablo De Chiaro** para a unidade curricular **FIA (Fundamentos de Inteligência Artificial)**. O objetivo principal é **guiar os estudos fundamentais** da unidade curricular, fornecendo uma base sólida e prática para o aprendizado de Machine Learning.
+
+### 🌟 Propósito e Uso
+
+- **🎯 Principal**: Material de apoio para a unidade curricular FIA
+- **🌍 Aberto**: Disponível para **qualquer aluno ou professor** que deseje utilizá-lo
+- **🆓 Livre**: Uso completamente gratuito e sem restrições
+- **🤝 Colaborativo**: Contribuições de novos materiais são muito bem-vindas
+
+> **Nota**: Embora criado para FIA, este material serve como recurso universal para o ensino e aprendizado de Machine Learning.
+
 ## 🚀 Início Rápido para Alunos
 
 ```bash
@@ -91,6 +104,18 @@ Este script:
 - 📚 Configura novos exercícios automaticamente
 - ✅ Verifica que tudo está funcionando
 
+## 🤝 Contribuições e Colaboração
+
+Este projeto é **aberto e colaborativo**! Professores, alunos e entusiastas de Machine Learning são encorajados a:
+
+- 📚 **Adicionar novos módulos** ou lições
+- 🛠️ **Melhorar exercícios** existentes
+- 🐛 **Reportar bugs** ou problemas
+- 💡 **Sugerir melhorias** pedagógicas
+- 📖 **Contribuir com documentação**
+
+Consulte o [Guia de Contribuição](docs/CONTRIBUTING.md) para mais detalhes.
+
 ## 📖 Documentação Completa
 
 - **👨‍🎓 [Guia Completo do Aluno](docs/STUDENT-GUIDE.md)** - Tutorial detalhado
@@ -143,4 +168,8 @@ uv run scripts/make_dataset_synth.py
 
 **🎯 Meta**: Aprender ML de forma prática, progressiva e reprodutível!
 
-� **Dúvidas?** Abra uma issue ou consulte o [Guia do Aluno](docs/STUDENT-GUIDE.md)
+**🎓 Criado por**: Prof. Pablo De Chiaro para FIA - Fundamentos de Inteligência Artificial
+
+**🌍 Uso Livre**: Material aberto para toda a comunidade acadêmica
+
+💡 **Dúvidas?** Abra uma issue ou consulte o [Guia do Aluno](docs/STUDENT-GUIDE.md)

@@ -36,18 +36,18 @@ uv run jupyter lab
 
 ## 📚 Estrutura do Curso
 
-| Módulo | Tópico                             | Status |
-| ------ | ---------------------------------- | ------ |
-| **01** | 🔧 Fundamentos e Pré-processamento | ✅     |
-| **02** | 📈 Regressão Linear                | ✅     |
-| **03** | 🎯 Classificação                   | ✅     |
-| **04** | ✅ Validação e Otimização          | ✅     |
-| **05** | ⚙️ Feature Engineering             | 🚧     |
-| **06** | 🔍 Aprendizado Não-Supervisionado  | 🚧     |
-| **07** | 📊 Séries Temporais                | 🚧     |
-| **08** | 🧠 Redes Neurais                   | ✅     |
-| **09** | 🤖 Deep Learning                   | 🚧     |
-| **10** | 🎯 Projetos Práticos               | 🚧     |
+| Módulo | Tópico                             |
+| ------ | ---------------------------------- |
+| **01** | 🔧 Fundamentos e Pré-processamento |
+| **02** | 📈 Regressão Linear                |
+| **03** | 🎯 Classificação                   |
+| **04** | ✅ Validação e Otimização          |
+| **05** | ⚙️ Feature Engineering             |
+| **06** | 🔍 Aprendizado Não-Supervisionado  |
+| **07** | 📊 Séries Temporais                |
+| **08** | 🧠 Redes Neurais                   |
+| **09** | 🤖 Deep Learning                   |
+| **10** | 🎯 Projetos Práticos               |
 
 ## 🎯 Como Estudar
 

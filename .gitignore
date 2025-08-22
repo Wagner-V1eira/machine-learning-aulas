@@ -124,3 +124,13 @@ Thumbs.db
 # Project specific
 datasets/downloads/
 *.log
+
+# Student work files (ignore completely)
+**/*_aluno.ipynb
+**/*_aluno.py
+**/*_student.*
+**/*_solution.*
+
+# Temporary exercise files
+**/temp_*.ipynb
+**/draft_*.py

@@ -15,6 +15,19 @@ Este repositório foi criado pelo **Prof. Pablo De Chiaro** para a unidade curri
 
 > **Nota**: Embora criado para FIA, este material serve como recurso universal para o ensino e aprendizado de Machine Learning.
 
+## Você precisa do UV instalado [uv.sh](https://docs.astral.sh/uv/getting-started/installation/)
+
+```bash
+## mac/linux/Windows(GitBash terminal):
+curl -LsSf https://astral.sh/uv/install.sh | sh
+## Windows(Powershell):
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+## Encerre TODOS terminais abertos!
+## para verificar a instalação, rode no terminal:
+uv --version
+```
+
 ## 🚀 Início Rápido para Alunos
 
 ```bash
@@ -22,7 +35,7 @@ Este repositório foi criado pelo **Prof. Pablo De Chiaro** para a unidade curri
 git clone https://github.com/chiarorosa/machine-learning-aulas.git
 cd machine-learning-aulas
 
-# 2. Configure o ambiente (UV será instalado automaticamente)
+# 2. Configure o ambiente
 uv sync
 
 # 3. Configure seus arquivos de exercícios

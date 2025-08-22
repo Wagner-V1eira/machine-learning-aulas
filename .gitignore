@@ -51,6 +51,16 @@ cover/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Jupyter outputs e metadados temporários
+**/*.ipynb-outputs
+**/*-checkpoint.ipynb
+**/*.nbconvert.ipynb
+
+# Jupyter Lab workspace settings
+.jupyter/
+.jupyter-server-log.txt
 
 # IPython
 profile_default/

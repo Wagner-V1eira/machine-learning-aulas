@@ -161,6 +161,7 @@ uv run scripts/grade_exercise.py <arquivo_aluno.ipynb>
 # Configuração
 uv run scripts/setup-student.py     # Configurar exercícios
 uv run scripts/check-structure.py   # Verificar estrutura
+uv run scripts/clean-notebooks.py   # Limpar outputs (professores)
 ./update-course.sh                  # Atualizar tudo
 
 # Desenvolvimento

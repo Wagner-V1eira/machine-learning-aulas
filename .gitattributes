@@ -1,0 +1,29 @@
+# Git attributes for machine learning course repository
+
+# Notebooks - special handling for merge conflicts and diffs
+*.ipynb diff=jupyternotebook
+*.ipynb merge=union
+
+# Student files always prefer local version (avoid conflicts)
+**/*_aluno.ipynb merge=ours
+**/*_student.* merge=ours
+**/*_solution.* merge=ours
+
+# Text files
+*.md diff=markdown
+*.py diff=python
+*.yaml diff=yaml
+*.yml diff=yaml
+
+# Data files - treat as binary
+*.csv binary
+*.pkl binary
+*.joblib binary
+*.h5 binary
+*.hdf5 binary
+
+# Model files
+*.pt binary
+*.pth binary
+*.onnx binary
+*.pb binary

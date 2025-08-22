@@ -1,6 +1,16 @@
 #!/bin/bash
 
-echo "🔄 Atualizando repositório do curso..."
+echo "# Sincronizar dependências
+echo "� Atualizando dependências..."
+uv sync
+
+# Limpar notebooks antes de merge (evitar conflitos)
+echo "🧹 Limpando outputs dos notebooks..."
+uv run scripts/clean-notebooks.py
+
+# Configurar novos exercícios (se houver)
+echo "📚 Configurando novos exercícios..."
+uv run scripts/setup-student.pylizando repositório do curso..."
 
 # Sincronizar com repositório do professor
 echo "📡 Baixando atualizações do professor..."

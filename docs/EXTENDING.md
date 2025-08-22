@@ -55,12 +55,12 @@ exercises:
 - slug: "01_kmeans_impl"
  title: "Implementando K-Means"
  notebook: "exercises/01_kmeans_impl.ipynb"
- tests: "exercises/01_kmeans_impl_tests.py"
+ tests: "../../tests/exercises/06-clustering_01_kmeans_impl_tests.py"
  max_score: 100
 - slug: "02_cluster_metrics"
  title: "Métricas de Clustering"
  notebook: "exercises/02_cluster_metrics.ipynb"
- tests: "exercises/02_cluster_metrics_tests.py"
+ tests: "../../tests/exercises/06-clustering_02_cluster_metrics_tests.py"
  max_score: 100
 ````
 
@@ -173,7 +173,7 @@ def kmeans_fit(X, k, max_iters=100, tol=1e-4):
 
 ### 5. Arquivo de Testes
 
-Criar `modules/06-clustering/exercises/01_kmeans_impl_tests.py`:
+Criar `tests/exercises/06-clustering_01_kmeans_impl_tests.py`:
 
 ```python
 """Testes para implementação do K-Means."""
@@ -265,7 +265,7 @@ exercises:
   - slug: "03_novo_exercicio"
     title: "Novo Exercício"
     notebook: "exercises/03_novo_exercicio.ipynb"
-    tests: "exercises/03_novo_exercicio_tests.py"
+    tests: "../../tests/exercises/XX-modulo_03_novo_exercicio_tests.py"
     max_score: 100
 ```
 
@@ -305,7 +305,7 @@ def test_hidden():
 ```bash
 uv run python scripts/grade_exercise.py \
   modules/XX-modulo/exercises/YY_exercicio.ipynb \
-  modules/XX-modulo/exercises/YY_exercicio_tests.py
+  tests/exercises/XX-modulo_YY_exercicio_tests.py
 ```
 
 ## Validação e Testes

@@ -24,6 +24,6 @@ exercises:
   - slug: "01_preprocess"
     title: "Pré-processamento Básico"
     notebook: "exercises/01_preprocess.ipynb"
-    tests: "exercises/01_preprocess_tests.py"
+    tests: "../../tests/exercises/01-fundamentos_01_preprocess_tests.py"
     max_score: 10
     test_enabled: true # Opcional: controla teste deste exercício específico

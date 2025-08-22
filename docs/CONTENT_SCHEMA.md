@@ -41,7 +41,7 @@ exercises:
   - slug: "01_exercicio" # Identificador do exercício
     title: "Título do Exercício" # Título legível
     notebook: "exercises/01_exercicio.ipynb" # Notebook do aluno
-    tests: "exercises/01_exercicio_tests.py" # Arquivo de testes
+    tests: "../../tests/exercises/{modulo}_{exercício}_tests.py" # Arquivo de testes
     max_score: 100 # Pontuação máxima
 ```
 
@@ -151,7 +151,15 @@ def funcao_exercicio(parametros):
 
 ## Arquivo de Testes
 
-Estrutura padrão para arquivos `*_tests.py`:
+Estrutura padrão para arquivos de teste (localizados em `tests/exercises/`):
+
+**Nomenclatura:** `{modulo}_{exercicio}_tests.py`
+
+**Exemplos:**
+
+- `01-fundamentos_01_preprocess_tests.py`
+- `02-regressao_01_mae_metric_tests.py`
+- `03-classificacao_01_classification_metrics_tests.py`
 
 ```python
 """Testes para o exercício X."""
@@ -162,7 +170,7 @@ from core.grading.api import load_notebook_funcs
 
 # Carregar funções do notebook do estudante
 student = load_notebook_funcs(
-    "caminho/para/exercicio.ipynb",
+    "../../modules/XX-modulo/exercises/YY_exercicio_aluno.ipynb",
     allowed_imports={"numpy", "pandas", "sklearn"}
 )
 

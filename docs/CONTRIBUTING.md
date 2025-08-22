@@ -93,7 +93,7 @@ ml-curso/
      - slug: "01_exercicio"
        title: "Exercício 1"
        notebook: "exercises/01_exercicio.ipynb"
-       tests: "exercises/01_exercicio_tests.py"
+       tests: "../../tests/exercises/XX-modulo_01_exercicio_tests.py"
        max_score: 100
    ```
 

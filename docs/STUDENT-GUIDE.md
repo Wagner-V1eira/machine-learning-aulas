@@ -23,8 +23,10 @@ uv run scripts/check-structure.py
 modules/01-fundamentos/exercises/
 ├── 01_preprocess.ipynb         # 📖 Template do professor (NÃO EDITE)
 ├── 01_preprocess_aluno.ipynb   # ✏️  SEU arquivo de trabalho
-├── 01_preprocess_tests.py      # 🧪 Testes automáticos
 └── 01_guia_exercicio.md        # 📋 Instruções detalhadas
+
+tests/exercises/
+└── 01-fundamentos_01_preprocess_aluno.py  # 🧪 Testes automáticos
 ```
 
 ## ⚖️ Regras de Ouro
@@ -40,7 +42,7 @@ modules/01-fundamentos/exercises/
 
 - 🚫 Editar templates originais (sem `_aluno`)
 - 🚫 Modificar arquivos em `lessons/`
-- 🚫 Alterar arquivos `*_tests.py`
+- 🚫 Alterar arquivos de teste (localizados em `tests/exercises/`)
 - 🚫 Fazer commit de arquivos temporários
 
 ## 🔄 Recebendo Atualizações
@@ -78,7 +80,7 @@ uv run jupyter lab
 
 ```bash
 # Testar exercício específico
-uv run pytest modules/01-fundamentos/exercises/01_preprocess_tests.py
+uv run pytest tests/exercises/01-fundamentos_01_preprocess_aluno.py
 
 # Testar todos os exercícios
 uv run pytest

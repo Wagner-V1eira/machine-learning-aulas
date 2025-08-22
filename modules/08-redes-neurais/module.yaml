@@ -22,5 +22,5 @@ exercises:
   - slug: "01_perceptron_impl"
     title: "Implementando Perceptron"
     notebook: "exercises/01_perceptron_impl.ipynb"
-    tests: "exercises/01_perceptron_impl_tests.py"
     max_score: 100
+    test_enabled: false

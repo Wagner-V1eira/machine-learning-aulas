@@ -87,7 +87,7 @@ uv run scripts/grade_exercise.py modules/01-fundamentos/exercises/01_preprocess_
 
 - 🚫 Editar templates originais (sem `_aluno`)
 - 🚫 Modificar arquivos em `lessons/`
-- 🚫 Alterar `*_tests.py`
+- 🚫 Alterar arquivos de teste (em `tests/exercises/`)
 
 ## 🔄 Recebendo Atualizações
 

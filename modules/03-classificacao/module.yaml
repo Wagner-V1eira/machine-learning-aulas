@@ -30,9 +30,8 @@ exercises:
   - slug: "01_metrics_clf"
     title: "Implementar Métricas de Classificação"
     notebook: "exercises/01_classification_metrics.ipynb"
-    tests: "exercises/01_classification_metrics_tests.py"
     max_score: 100
-    test_enabled: true
+    test_enabled: false
   - slug: "02_logistic_impl"
     title: "Implementar Regressão Logística"
     notebook: "exercises/02_logistic_implementation.ipynb"

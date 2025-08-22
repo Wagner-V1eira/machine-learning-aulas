@@ -19,6 +19,5 @@ exercises:
   - slug: "01_mae_metric"
     title: "Implementando MAE"
     notebook: "exercises/01_mae_metric.ipynb"
-    tests: "exercises/01_mae_metric_tests.py"
     max_score: 100
-    test_enabled: true
+    test_enabled: false

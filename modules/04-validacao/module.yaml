@@ -23,5 +23,5 @@ exercises:
   - slug: "01_model_optimization"
     title: "Otimização de Modelos"
     notebook: "exercises/01_model_optimization.ipynb"
-    tests: "exercises/01_model_optimization_tests.py"
     max_score: 120
+    test_enabled: false

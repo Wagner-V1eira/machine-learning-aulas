@@ -1,12 +1,12 @@
-slug: "10-projetos"
+slug: "09-projetos"
 title: "Projetos de Consolidação"
 order: 9
 prerequisites:
-  - "08-redes-neurais"
-  - "07-series-temporais"
-  - "06-nao-supervisionado"
-  - "05-feature-engineering"
-  - "04-validacao"
+  - "07-redes-neurais"
+  - "06-series-temporais"
+  - "05-nao-supervisionado"
+  - "04-feature-engineering"
+  - "03-validacao"
 # Controle de testes - desabilitado temporariamente
 test_enabled: false
 outcomes:

@@ -1,7 +1,7 @@
-slug: "06-nao-supervisionado"
+slug: "05-nao-supervisionado"
 title: "Aprendizado Não Supervisionado"
 order: 5
-prerequisites: ["01-fundamentos", "04-validacao"]
+prerequisites: ["01-fundamentos", "03-validacao"]
 # Controle de testes - desabilitado temporariamente
 test_enabled: false
 outcomes:

@@ -1,6 +1,6 @@
 slug: "10-projetos"
 title: "Projetos de Consolidação"
-order: 10
+order: 9
 prerequisites:
   - "08-redes-neurais"
   - "07-series-temporais"

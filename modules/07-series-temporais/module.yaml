@@ -1,7 +1,7 @@
 slug: "07-series-temporais"
 title: "Séries Temporais"
-order: 7
-prerequisites: ["01-fundamentos", "02-regressao"]
+order: 6
+prerequisites: ["01-fundamentos"]
 # Controle de testes - desabilitado temporariamente
 test_enabled: false
 outcomes:

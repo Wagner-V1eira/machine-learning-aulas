@@ -43,7 +43,6 @@ def test_module_yaml_files_exist():
     # Lista específica de módulos críticos que sempre devem existir
     critical_modules = [
         "modules/01-fundamentos",
-        "modules/02-regressao",
     ]
 
     for module_path in critical_modules:

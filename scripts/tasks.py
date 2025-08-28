@@ -220,12 +220,12 @@ Comandos disponíveis:
 
 Exemplos:
   uv run python scripts/tasks.py setup
-  uv run python scripts/tasks.py grade --module 02-regressao --exercise 01_mae_metric
+  uv run python scripts/tasks.py grade --module 03-classificacao --exercise 01_classification_metrics
   uv run python scripts/tasks.py lint
 
 Ou com UV (modo direto após install):
   uv run ml-curso setup
-  uv run ml-curso grade --module 02-regressao --exercise 01_mae_metric
+  uv run ml-curso grade --module 03-classificacao --exercise 01_classification_metrics
 """
     )
 
@@ -250,8 +250,8 @@ def main() -> None:
 
     # Comando grade com argumentos
     grade_parser = subparsers.add_parser("grade", help="Executar autograder")
-    grade_parser.add_argument("--module", "-m", required=True, help="Módulo (ex: 02-regressao)")
-    grade_parser.add_argument("--exercise", "-e", required=True, help="Exercício (ex: 01_mae_metric)")
+    grade_parser.add_argument("--module", "-m", required=True, help="Módulo (ex: 03-classificacao)")
+    grade_parser.add_argument("--exercise", "-e", required=True, help="Exercício (ex: 01_classification_metrics)")
 
     args = parser.parse_args()
 

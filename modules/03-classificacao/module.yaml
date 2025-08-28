@@ -1,7 +1,7 @@
 slug: "03-classificacao"
 title: "Classificação Supervisionada"
-order: 3
-prerequisites: ["01-fundamentos", "02-regressao"]
+order: 2
+prerequisites: ["01-fundamentos"]
 # Módulo em desenvolvimento - alguns arquivos ainda não existem
 test_enabled: false
 outcomes:

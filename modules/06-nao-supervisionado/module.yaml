@@ -1,6 +1,6 @@
 slug: "06-nao-supervisionado"
 title: "Aprendizado Não Supervisionado"
-order: 6
+order: 5
 prerequisites: ["01-fundamentos", "04-validacao"]
 # Controle de testes - desabilitado temporariamente
 test_enabled: false

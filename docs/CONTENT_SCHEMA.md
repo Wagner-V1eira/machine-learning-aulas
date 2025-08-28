@@ -158,7 +158,6 @@ Estrutura padrão para arquivos de teste (localizados em `tests/exercises/`):
 **Exemplos:**
 
 - `01-fundamentos_01_preprocess_tests.py`
-- `02-regressao_01_mae_metric_tests.py`
 - `03-classificacao_01_classification_metrics_tests.py`
 
 ```python

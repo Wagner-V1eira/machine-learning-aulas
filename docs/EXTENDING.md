@@ -37,7 +37,7 @@ uv run python notebook.py
 slug: "06-clustering"
 title: "Aprendizado Não Supervisionado - Clustering"
 order: 6
-prerequisites: ["01-fundamentos", "03-validacao"]
+prerequisites: ["01-fundamentos", "03-validacao_otimizacao"]
 outcomes:
 - "Explicar algoritmos de clustering (K-Means, DBSCAN)"
 - "Avaliar qualidade de clusters com métricas apropriadas"

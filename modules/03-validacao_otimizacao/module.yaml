@@ -1,0 +1,43 @@
+slug: "03-validacao_otimizacao"
+title: "Validação & Otimização"
+order: 3
+prerequisites: ["01-fundamentos", "02-classificacao"]
+test_enabled: false
+outcomes:
+  - "Compreender importância da validação de modelos"
+  - "Implementar holdout e k-fold cross-validation"
+  - "Aplicar métricas de avaliação adequadas"
+  - "Executar grid search e random search"
+  - "Detectar overfitting e underfitting"
+lessons:
+  - slug: "01_intro_validacao"
+    title: "Introdução à Validação"
+    notebook: "lessons/01_intro_validacao.ipynb"
+    est_time_min: 35
+    test_enabled: false
+  - slug: "02_cross_validation"
+    title: "Cross-Validation"
+    notebook: "lessons/02_cross_validation.ipynb"
+    est_time_min: 40
+    test_enabled: false
+  - slug: "03_metrics"
+    title: "Métricas de Avaliação"
+    notebook: "lessons/03_metrics.ipynb"
+    est_time_min: 40
+    test_enabled: false
+  - slug: "04_hyperparameter_tuning"
+    title: "Tuning de Hiperparâmetros"
+    notebook: "lessons/04_hyperparameter_tuning.ipynb"
+    est_time_min: 45
+    test_enabled: false
+exercises:
+  - slug: "01_model_selection"
+    title: "Seleção de Modelos"
+    notebook: "exercises/01_model_selection.ipynb"
+    max_score: 120
+    test_enabled: false
+  - slug: "02_tuning_exercise"
+    title: "Exercício de Tuning"
+    notebook: "exercises/02_tuning_exercise.ipynb"
+    max_score: 150
+    test_enabled: false

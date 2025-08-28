@@ -1,26 +1,43 @@
 slug: "07-redes-neurais"
 title: "Redes Neurais"
 order: 7
-prerequisites: ["01-fundamentos", "02-classificacao"]
-# Módulo em desenvolvimento - desabilitar testes temporariamente
+prerequisites: ["01-fundamentos", "02-classificacao", "03-validacao_otimizacao"]
 test_enabled: false
 outcomes:
   - "Compreender o funcionamento de neurônios artificiais"
-  - "Implementar perceptron simples"
-  - "Explicar backpropagation básico"
-  - "Treinar MLPs para problemas simples"
+  - "Implementar MLPs para classificação"
+  - "Aplicar técnicas de regularização"
+  - "Otimizar algoritmos de treinamento"
+  - "Tunear hiperparâmetros de redes neurais"
 lessons:
-  - slug: "01_perceptron"
-    title: "Perceptron e Neurônio Artificial"
-    notebook: "lessons/01_perceptron.ipynb"
+  - slug: "01_intro_nn"
+    title: "Introdução a Redes Neurais"
+    notebook: "lessons/01_intro_nn.ipynb"
+    est_time_min: 45
+    test_enabled: false
+  - slug: "02_mlp_classification"
+    title: "MLP para Classificação"
+    notebook: "lessons/02_mlp_classification.ipynb"
     est_time_min: 50
-  - slug: "02_mlp_backprop"
-    title: "MLP e Backpropagation"
-    notebook: "lessons/02_mlp_backprop.ipynb"
-    est_time_min: 60
+    test_enabled: false
+  - slug: "03_regularization"
+    title: "Regularização em Redes Neurais"
+    notebook: "lessons/03_regularization.ipynb"
+    est_time_min: 45
+    test_enabled: false
+  - slug: "04_optimization_algos"
+    title: "Algoritmos de Otimização"
+    notebook: "lessons/04_optimization_algos.ipynb"
+    est_time_min: 50
+    test_enabled: false
 exercises:
-  - slug: "01_perceptron_impl"
-    title: "Implementando Perceptron"
-    notebook: "exercises/01_perceptron_impl.ipynb"
-    max_score: 100
+  - slug: "01_mnist_classification"
+    title: "Classificação MNIST"
+    notebook: "exercises/01_mnist_classification.ipynb"
+    max_score: 140
+    test_enabled: false
+  - slug: "02_tuning_nn"
+    title: "Tuning de Redes Neurais"
+    notebook: "exercises/02_tuning_nn.ipynb"
+    max_score: 150
     test_enabled: false

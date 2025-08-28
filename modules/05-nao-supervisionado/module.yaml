@@ -1,22 +1,43 @@
 slug: "05-nao-supervisionado"
 title: "Aprendizado Não Supervisionado"
 order: 5
-prerequisites: ["01-fundamentos", "03-validacao"]
-# Controle de testes - desabilitado temporariamente
+prerequisites: ["01-fundamentos", "03-validacao_otimizacao"]
 test_enabled: false
 outcomes:
+  - "Compreender aprendizado não supervisionado"
   - "Implementar algoritmos de clustering"
-  - "Aplicar K-Means e DBSCAN"
-  - "Compreender PCA"
-  - "Avaliar clusters"
-  - "Detectar anomalias"
+  - "Aplicar K-Means e clustering hierárquico"
+  - "Usar redução de dimensionalidade"
+  - "Avaliar qualidade de clusters"
 lessons:
-  - slug: "01_clustering"
-    title: "Algoritmos de Clustering"
-    notebook: "lessons/01_clustering.ipynb"
-    est_time_min: 50
-  - slug: "02_pca"
-    title: "Análise de Componentes Principais"
-    notebook: "lessons/02_pca.ipynb"
+  - slug: "01_intro_unsupervised"
+    title: "Introdução ao Aprendizado Não Supervisionado"
+    notebook: "lessons/01_intro_unsupervised.ipynb"
+    est_time_min: 35
+    test_enabled: false
+  - slug: "02_clustering_kmeans"
+    title: "Clustering com K-Means"
+    notebook: "lessons/02_clustering_kmeans.ipynb"
     est_time_min: 45
-exercises: []
+    test_enabled: false
+  - slug: "03_clustering_hierarchical"
+    title: "Clustering Hierárquico"
+    notebook: "lessons/03_clustering_hierarchical.ipynb"
+    est_time_min: 40
+    test_enabled: false
+  - slug: "04_dimensionality_reduction_unsup"
+    title: "Redução de Dimensionalidade"
+    notebook: "lessons/04_dimensionality_reduction_unsup.ipynb"
+    est_time_min: 50
+    test_enabled: false
+exercises:
+  - slug: "01_customer_segmentation"
+    title: "Segmentação de Clientes"
+    notebook: "exercises/01_customer_segmentation.ipynb"
+    max_score: 140
+    test_enabled: false
+  - slug: "02_image_clustering"
+    title: "Clustering de Imagens"
+    notebook: "exercises/02_image_clustering.ipynb"
+    max_score: 130
+    test_enabled: false

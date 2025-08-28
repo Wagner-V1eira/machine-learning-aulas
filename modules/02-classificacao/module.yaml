@@ -2,39 +2,37 @@ slug: "02-classificacao"
 title: "Classificação Supervisionada"
 order: 2
 prerequisites: ["01-fundamentos"]
-# Módulo em desenvolvimento - alguns arquivos ainda não existem
 test_enabled: false
 outcomes:
-  - "Compreender algoritmos de classificação"
-  - "Implementar regressão logística"
-  - "Aplicar SVM para classificação"
-  - "Usar árvores de decisão e random forests"
+  - "Compreender conceitos fundamentais de classificação"
+  - "Implementar algoritmo K-Nearest Neighbors"
+  - "Aplicar árvores de decisão para classificação"
+  - "Comparar diferentes algoritmos de classificação"
   - "Avaliar modelos de classificação"
 lessons:
-  - slug: "01_logistica"
-    title: "Regressão Logística"
-    notebook: "lessons/01_regressao_logistica.ipynb"
+  - slug: "01_intro_classificacao"
+    title: "Introdução à Classificação"
+    notebook: "lessons/01_intro_classificacao.ipynb"
     est_time_min: 45
-    test_enabled: true
-  - slug: "02_svm"
-    title: "Support Vector Machines"
-    notebook: "lessons/02_svm.ipynb"
+    test_enabled: false
+  - slug: "02_knn"
+    title: "K-Nearest Neighbors"
+    notebook: "lessons/02_knn.ipynb"
     est_time_min: 40
     test_enabled: false
-  - slug: "03_arvores"
-    title: "Árvores de Decisão e Random Forest"
-    notebook: "lessons/03_arvores_decisao.ipynb"
+  - slug: "03_decision_trees"
+    title: "Árvores de Decisão"
+    notebook: "lessons/03_decision_trees.ipynb"
     est_time_min: 50
     test_enabled: false
 exercises:
-  - slug: "01_metrics_clf"
-    title: "Implementar Métricas de Classificação"
-    notebook: "exercises/01_classification_metrics.ipynb"
+  - slug: "01_classification_basic"
+    title: "Classificação Básica"
+    notebook: "exercises/01_classification_basic.ipynb"
     max_score: 100
     test_enabled: false
-  - slug: "02_logistic_impl"
-    title: "Implementar Regressão Logística"
-    notebook: "exercises/02_logistic_implementation.ipynb"
-    tests: "exercises/02_logistic_implementation_tests.py"
+  - slug: "02_compare_classifiers"
+    title: "Comparação de Classificadores"
+    notebook: "exercises/02_compare_classifiers.ipynb"
     max_score: 150
     test_enabled: false

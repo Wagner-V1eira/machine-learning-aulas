@@ -2,17 +2,42 @@ slug: "04-feature-engineering"
 title: "Feature Engineering & Pipelines"
 order: 4
 prerequisites: ["01-fundamentos", "02-classificacao"]
-# Controle de testes - desabilitado temporariamente
 test_enabled: false
 outcomes:
-  - "Implementar scalers e normalizadores"
-  - "Aplicar OneHot encoding"
-  - "Usar ColumnTransformer"
-  - "Construir pipelines sklearn"
-  - "Feature selection e extração"
+  - "Aplicar técnicas de feature scaling"
+  - "Implementar encoding de variáveis categóricas"
+  - "Executar seleção de features"
+  - "Usar redução de dimensionalidade"
+  - "Construir pipelines completos"
 lessons:
-  - slug: "01_preprocessing"
-    title: "Pré-processamento de Dados"
-    notebook: "lessons/01_preprocessing.ipynb"
+  - slug: "01_feature_scaling"
+    title: "Feature Scaling"
+    notebook: "lessons/01_feature_scaling.ipynb"
+    est_time_min: 40
+    test_enabled: false
+  - slug: "02_feature_encoding"
+    title: "Feature Encoding"
+    notebook: "lessons/02_feature_encoding.ipynb"
+    est_time_min: 45
+    test_enabled: false
+  - slug: "03_feature_selection"
+    title: "Feature Selection"
+    notebook: "lessons/03_feature_selection.ipynb"
+    est_time_min: 40
+    test_enabled: false
+  - slug: "04_dimensionality_reduction"
+    title: "Redução de Dimensionalidade"
+    notebook: "lessons/04_dimensionality_reduction.ipynb"
     est_time_min: 50
-exercises: []
+    test_enabled: false
+exercises:
+  - slug: "01_engineering_pipeline"
+    title: "Pipeline de Feature Engineering"
+    notebook: "exercises/01_engineering_pipeline.ipynb"
+    max_score: 130
+    test_enabled: false
+  - slug: "02_feature_importance"
+    title: "Análise de Feature Importance"
+    notebook: "exercises/02_feature_importance.ipynb"
+    max_score: 120
+    test_enabled: false

@@ -14,30 +14,24 @@ lessons:
     title: "Introdução ao Deep Learning"
     notebook: "lessons/01_intro_dl.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "02_cnn_images"
     title: "CNNs para Imagens"
     notebook: "lessons/02_cnn_images.ipynb"
     est_time_min: 60
-    test_enabled: false
   - slug: "03_rnn_sequences"
     title: "RNNs para Sequências"
     notebook: "lessons/03_rnn_sequences.ipynb"
     est_time_min: 55
-    test_enabled: false
   - slug: "04_transfer_learning"
     title: "Transfer Learning"
     notebook: "lessons/04_transfer_learning.ipynb"
     est_time_min: 50
-    test_enabled: false
 exercises:
   - slug: "01_image_classification"
     title: "Classificação de Imagens"
     notebook: "exercises/01_image_classification.ipynb"
     max_score: 160
-    test_enabled: false
   - slug: "02_text_generation"
     title: "Geração de Texto"
     notebook: "exercises/02_text_generation.ipynb"
     max_score: 150
-    test_enabled: false

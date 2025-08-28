@@ -14,30 +14,24 @@ lessons:
     title: "Feature Scaling"
     notebook: "lessons/01_feature_scaling.ipynb"
     est_time_min: 40
-    test_enabled: false
   - slug: "02_feature_encoding"
     title: "Feature Encoding"
     notebook: "lessons/02_feature_encoding.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "03_feature_selection"
     title: "Feature Selection"
     notebook: "lessons/03_feature_selection.ipynb"
     est_time_min: 40
-    test_enabled: false
   - slug: "04_dimensionality_reduction"
     title: "Redução de Dimensionalidade"
     notebook: "lessons/04_dimensionality_reduction.ipynb"
     est_time_min: 50
-    test_enabled: false
 exercises:
   - slug: "01_engineering_pipeline"
     title: "Pipeline de Feature Engineering"
     notebook: "exercises/01_engineering_pipeline.ipynb"
     max_score: 130
-    test_enabled: false
   - slug: "02_feature_importance"
     title: "Análise de Feature Importance"
     notebook: "exercises/02_feature_importance.ipynb"
     max_score: 120
-    test_enabled: false

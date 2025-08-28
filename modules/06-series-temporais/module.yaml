@@ -14,30 +14,24 @@ lessons:
     title: "Introdução a Séries Temporais"
     notebook: "lessons/01_intro_time_series.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "02_arima"
     title: "Modelos ARIMA"
     notebook: "lessons/02_arima.ipynb"
     est_time_min: 50
-    test_enabled: false
   - slug: "03_prophet"
     title: "Prophet para Forecasting"
     notebook: "lessons/03_prophet.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "04_ml_forecasting"
     title: "ML para Forecasting"
     notebook: "lessons/04_ml_forecasting.ipynb"
     est_time_min: 55
-    test_enabled: false
 exercises:
   - slug: "01_stock_prediction"
     title: "Predição de Ações"
     notebook: "exercises/01_stock_prediction.ipynb"
     max_score: 150
-    test_enabled: false
   - slug: "02_energy_forecasting"
     title: "Forecasting de Energia"
     notebook: "exercises/02_energy_forecasting.ipynb"
     max_score: 140
-    test_enabled: false

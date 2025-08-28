@@ -14,30 +14,24 @@ lessons:
     title: "Introdução a Redes Neurais"
     notebook: "lessons/01_intro_nn.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "02_mlp_classification"
     title: "MLP para Classificação"
     notebook: "lessons/02_mlp_classification.ipynb"
     est_time_min: 50
-    test_enabled: false
   - slug: "03_regularization"
     title: "Regularização em Redes Neurais"
     notebook: "lessons/03_regularization.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "04_optimization_algos"
     title: "Algoritmos de Otimização"
     notebook: "lessons/04_optimization_algos.ipynb"
     est_time_min: 50
-    test_enabled: false
 exercises:
   - slug: "01_mnist_classification"
     title: "Classificação MNIST"
     notebook: "exercises/01_mnist_classification.ipynb"
     max_score: 140
-    test_enabled: false
   - slug: "02_tuning_nn"
     title: "Tuning de Redes Neurais"
     notebook: "exercises/02_tuning_nn.ipynb"
     max_score: 150
-    test_enabled: false

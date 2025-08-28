@@ -14,30 +14,24 @@ lessons:
     title: "Introdução ao Aprendizado Não Supervisionado"
     notebook: "lessons/01_intro_unsupervised.ipynb"
     est_time_min: 35
-    test_enabled: false
   - slug: "02_clustering_kmeans"
     title: "Clustering com K-Means"
     notebook: "lessons/02_clustering_kmeans.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "03_clustering_hierarchical"
     title: "Clustering Hierárquico"
     notebook: "lessons/03_clustering_hierarchical.ipynb"
     est_time_min: 40
-    test_enabled: false
   - slug: "04_dimensionality_reduction_unsup"
     title: "Redução de Dimensionalidade"
     notebook: "lessons/04_dimensionality_reduction_unsup.ipynb"
     est_time_min: 50
-    test_enabled: false
 exercises:
   - slug: "01_customer_segmentation"
     title: "Segmentação de Clientes"
     notebook: "exercises/01_customer_segmentation.ipynb"
     max_score: 140
-    test_enabled: false
   - slug: "02_image_clustering"
     title: "Clustering de Imagens"
     notebook: "exercises/02_image_clustering.ipynb"
     max_score: 130
-    test_enabled: false

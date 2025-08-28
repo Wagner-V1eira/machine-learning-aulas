@@ -14,25 +14,20 @@ lessons:
     title: "Introdução à Classificação"
     notebook: "lessons/01_intro_classificacao.ipynb"
     est_time_min: 45
-    test_enabled: false
   - slug: "02_knn"
     title: "K-Nearest Neighbors"
     notebook: "lessons/02_knn.ipynb"
     est_time_min: 40
-    test_enabled: false
   - slug: "03_decision_trees"
     title: "Árvores de Decisão"
     notebook: "lessons/03_decision_trees.ipynb"
     est_time_min: 50
-    test_enabled: false
 exercises:
   - slug: "01_classification_basic"
     title: "Classificação Básica"
     notebook: "exercises/01_classification_basic.ipynb"
     max_score: 100
-    test_enabled: false
   - slug: "02_compare_classifiers"
     title: "Comparação de Classificadores"
     notebook: "exercises/02_compare_classifiers.ipynb"
     max_score: 150
-    test_enabled: false

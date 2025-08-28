@@ -52,15 +52,14 @@ uv run jupyter lab
 | Módulo | Tópico                             |
 | ------ | ---------------------------------- |
 | **01** | 🔧 Fundamentos e Pré-processamento |
-| **02** | 📈 Regressão Linear                |
-| **03** | 🎯 Classificação                   |
-| **04** | ✅ Validação e Otimização          |
-| **05** | ⚙️ Feature Engineering             |
-| **06** | 🔍 Aprendizado Não-Supervisionado  |
-| **07** | 📊 Séries Temporais                |
-| **08** | 🧠 Redes Neurais                   |
-| **09** | 🤖 Deep Learning                   |
-| **10** | 🎯 Projetos Práticos               |
+| **02** | 🎯 Classificação                   |
+| **03** | ✅ Validação e Otimização          |
+| **04** | ⚙️ Feature Engineering             |
+| **05** | 🔍 Aprendizado Não-Supervisionado  |
+| **06** | 📊 Séries Temporais                |
+| **07** | 🧠 Redes Neurais                   |
+| **08** | 🤖 Deep Learning                   |
+| **09** | 🎯 Projetos Práticos               |
 
 ## 🎯 Como Estudar
 
@@ -69,7 +68,7 @@ uv run jupyter lab
 1. **📖 Estude as lições**: `modules/*/lessons/*.ipynb`
 2. **✏️ Faça os exercícios**: Edite apenas arquivos `*_aluno.ipynb`
 3. **🧪 Teste seu código**: `uv run pytest`
-4. **📊 Avalie progresso**: `uv run scripts/grade_exercise.py <arquivo_aluno.ipynb>`
+4. **📊 Avalie progresso**: `uv run scripts/grade_exercise.py <arquivo_aluno.ipynb> <arquivo_tests.py>`
 5. **🔄 Receba atualizações**: `./update-course.sh`
 
 ### Comandos Essenciais:
@@ -85,7 +84,9 @@ uv run pytest                       # Executar testes
 ./update-course.sh                  # Receber atualizações do professor
 
 # Avaliação
-uv run scripts/grade_exercise.py modules/01-fundamentos/exercises/01_preprocess_aluno.ipynb
+uv run scripts/grade_exercise.py \
+  modules/01-fundamentos/exercises/01_preprocess_aluno.ipynb \
+  tests/exercises/01-fundamentos_01_preprocess_tests.py
 ```
 
 ## ⚠️ Regras Importantes

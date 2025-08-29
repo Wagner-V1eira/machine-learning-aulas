@@ -1,0 +1,3 @@
+# Este arquivo mantém a estrutura da pasta kaggle no repositório
+# A pasta kaggle é usada para armazenar datasets baixados do Kaggle
+# Os arquivos de dados são ignorados pelo .gitignore mas a estrutura é preservada

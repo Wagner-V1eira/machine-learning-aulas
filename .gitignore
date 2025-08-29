@@ -133,6 +133,14 @@ Thumbs.db
 
 # Project specific
 datasets/downloads/
+datasets/kaggle/*.csv
+datasets/kaggle/*.json
+datasets/kaggle/*.parquet
+datasets/kaggle/*.zip
+datasets/kaggle/*.tar.gz
+datasets/kaggle/*.xlsx
+datasets/kaggle/*.xls
+!datasets/kaggle/.gitkeep
 *.log
 
 # Student work files (ignore completely)

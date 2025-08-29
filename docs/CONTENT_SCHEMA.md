@@ -43,6 +43,9 @@ exercises:
     notebook: "exercises/01_exercicio.ipynb" # Notebook do aluno
     tests: "../../tests/exercises/{modulo}_{exercício}_tests.py" # Arquivo de testes
     max_score: 100 # Pontuação máxima
+    create: true # [OPCIONAL] Indica se deve criar arquivo _aluno automaticamente
+                 # Usar apenas quando o exercício estiver finalizado
+                 # Se omitido, padrão é false
 ```
 
 ## Estrutura de Notebooks
@@ -278,6 +281,49 @@ def test_hidden_comprehensive():
 - Clareza das explicações
 - Progressão lógica
 - Exercícios apropriados
+
+## Gerenciamento de Exercícios
+
+### Flag create nos Exercícios
+
+A flag `create: true` no `module.yaml` controla quando um exercício deve gerar automaticamente um arquivo `_aluno`:
+
+```yaml
+exercises:
+  - slug: "01_exercicio_pronto"
+    title: "Exercício Finalizado"
+    notebook: "exercises/01_exercicio_pronto.ipynb"
+    max_score: 100
+    create: true  # ✅ Criará arquivo _aluno
+
+  - slug: "02_exercicio_desenvolvimento"
+    title: "Exercício em Desenvolvimento"
+    notebook: "exercises/02_exercicio_desenvolvimento.ipynb"
+    max_score: 150
+    # ❌ SEM create: true - não criará arquivo _aluno
+```
+
+### Fluxo de Desenvolvimento
+
+1. **Desenvolvimento**: Exercício sem `create: true`
+   - Template pode ser modificado livremente
+   - Arquivo `_aluno` não é criado automaticamente
+   - Evita templates desatualizados para alunos
+
+2. **Finalização**: Adicionar `create: true`
+   - Exercício considerado estável
+   - Script `setup-student.py` criará arquivo `_aluno`
+   - Template será copiado para alunos
+
+3. **Atualizações**: Se template mudar após `create: true`
+   - Remover arquivos `_aluno` existentes manualmente
+   - Script criará novos com template atualizado
+
+### Scripts Relacionados
+
+- `scripts/setup-student.py`: Cria arquivos `_aluno` baseado na flag `create`
+- `update-course.sh`: Executa setup-student.py automaticamente
+- Scripts respeitam flag para evitar criação prematura
 
 ## Extensibilidade
 

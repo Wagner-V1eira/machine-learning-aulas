@@ -27,7 +27,9 @@ exercises:
     title: "Classificação Básica"
     notebook: "exercises/01_classification_basic.ipynb"
     max_score: 100
+    create: true
   - slug: "02_compare_classifiers"
     title: "Comparação de Classificadores"
     notebook: "exercises/02_compare_classifiers.ipynb"
     max_score: 150
+    create: true

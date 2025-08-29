@@ -27,3 +27,4 @@ exercises:
     tests: "../../tests/exercises/01-fundamentos_01_preprocess_tests.py"
     max_score: 10
     test_enabled: true # Opcional: controla teste deste exercício específico
+    create: true

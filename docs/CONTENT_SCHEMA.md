@@ -43,9 +43,10 @@ exercises:
     notebook: "exercises/01_exercicio.ipynb" # Notebook do aluno
     tests: "../../tests/exercises/{modulo}_{exercício}_tests.py" # Arquivo de testes
     max_score: 100 # Pontuação máxima
-    create: true # [OPCIONAL] Indica se deve criar arquivo _aluno automaticamente
-                 # Usar apenas quando o exercício estiver finalizado
-                 # Se omitido, padrão é false
+    create:
+      true # [OPCIONAL] Indica se deve criar arquivo _aluno automaticamente
+      # Usar apenas quando o exercício estiver finalizado
+      # Se omitido, padrão é false
 ```
 
 ## Estrutura de Notebooks
@@ -294,7 +295,7 @@ exercises:
     title: "Exercício Finalizado"
     notebook: "exercises/01_exercicio_pronto.ipynb"
     max_score: 100
-    create: true  # ✅ Criará arquivo _aluno
+    create: true # ✅ Criará arquivo _aluno
 
   - slug: "02_exercicio_desenvolvimento"
     title: "Exercício em Desenvolvimento"
@@ -306,11 +307,13 @@ exercises:
 ### Fluxo de Desenvolvimento
 
 1. **Desenvolvimento**: Exercício sem `create: true`
+
    - Template pode ser modificado livremente
    - Arquivo `_aluno` não é criado automaticamente
    - Evita templates desatualizados para alunos
 
 2. **Finalização**: Adicionar `create: true`
+
    - Exercício considerado estável
    - Script `setup-student.py` criará arquivo `_aluno`
    - Template será copiado para alunos

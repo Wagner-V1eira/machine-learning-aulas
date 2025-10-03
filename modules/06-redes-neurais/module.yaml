@@ -1,6 +1,6 @@
-slug: "07-redes-neurais"
+slug: "06-redes-neurais"
 title: "Redes Neurais"
-order: 7
+order: 6
 prerequisites: ["01-fundamentos", "02-classificacao", "03-validacao_otimizacao"]
 test_enabled: false
 outcomes:

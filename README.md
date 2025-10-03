@@ -56,10 +56,9 @@ uv run jupyter lab
 | **03** | ✅ Validação e Otimização          |
 | **04** | ⚙️ Feature Engineering             |
 | **05** | 🔍 Aprendizado Não-Supervisionado  |
-| **06** | 📊 Séries Temporais                |
-| **07** | 🧠 Redes Neurais                   |
-| **08** | 🤖 Deep Learning                   |
-| **09** | 🎯 Projetos Práticos               |
+| **06** | 🧠 Redes Neurais                   |
+| **07** | 🤖 Deep Learning                   |
+| **08** | 🎯 Projetos Práticos               |
 
 ## 🎯 Como Estudar
 
@@ -149,7 +148,7 @@ uv run scripts/tasks.py lint           # Verificar código
 uv run scripts/tasks.py test           # Executar todos os testes
 
 # Gerenciar módulos
-uv run scripts/manage_tests.py enable 07-redes-neurais
+uv run scripts/manage_tests.py enable 06-redes-neurais
 uv run scripts/manage_tests.py disable 02-classificacao
 uv run scripts/manage_tests.py list
 

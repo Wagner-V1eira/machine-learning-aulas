@@ -31,6 +31,7 @@ exercises:
     title: "Classificação MNIST"
     notebook: "exercises/01_mnist_classification.ipynb"
     max_score: 140
+    create: true
   - slug: "02_tuning_nn"
     title: "Tuning de Redes Neurais"
     notebook: "exercises/02_tuning_nn.ipynb"

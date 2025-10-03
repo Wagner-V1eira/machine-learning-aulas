@@ -148,7 +148,7 @@ uv run scripts/tasks.py lint           # Verificar código
 uv run scripts/tasks.py test           # Executar todos os testes
 
 # Gerenciar módulos
-uv run scripts/manage_tests.py enable 06-redes-neurais
+uv run scripts/manage_tests.py enable 05-redes-neurais
 uv run scripts/manage_tests.py disable 02-classificacao
 uv run scripts/manage_tests.py list
 

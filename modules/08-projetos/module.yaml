@@ -2,8 +2,9 @@ slug: "08-projetos"
 title: "Projetos de Consolidação"
 order: 8
 prerequisites:
-  - "06-redes-neurais"
-  - "05-nao-supervisionado"
+  - "05-redes-neurais"
+  - "06-deep-learning"
+  - "07-nao-supervisionado"
   - "04-feature-engineering"
   - "03-validacao"
 # Controle de testes - desabilitado temporariamente

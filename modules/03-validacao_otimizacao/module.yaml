@@ -31,6 +31,7 @@ exercises:
     title: "Seleção de Modelos"
     notebook: "exercises/01_model_selection.ipynb"
     max_score: 120
+    create: true
   - slug: "02_tuning_exercise"
     title: "Exercício de Tuning"
     notebook: "exercises/02_tuning_exercise.ipynb"

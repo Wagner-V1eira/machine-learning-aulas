@@ -21,7 +21,6 @@ Esta pasta contém os datasets utilizados no curso.
 - `regression_dataset.csv` - Dataset de regressão (500 amostras, 5 features)
 - `classification_dataset.csv` - Dataset de classificação (500 amostras, 8 features, 3 classes)
 - `clustering_dataset.csv` - Dataset de clustering (300 amostras, 2 features, 4 clusters)
-- `timeseries_dataset.csv` - Dataset de série temporal (365 dias)
 
 ### Como Usar
 

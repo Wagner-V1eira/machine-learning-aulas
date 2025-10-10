@@ -1,7 +1,7 @@
-slug: "08-deep-learning"
+slug: "06-deep-learning"
 title: "Deep Learning"
-order: 8
-prerequisites: ["01-fundamentos", "02-classificacao", "07-redes-neurais"]
+order: 6
+prerequisites: ["01-fundamentos", "02-classificacao", "05-redes-neurais"]
 test_enabled: false
 outcomes:
   - "Compreender conceitos de deep learning"

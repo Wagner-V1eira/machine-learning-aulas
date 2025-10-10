@@ -1,6 +1,6 @@
-slug: "05-nao-supervisionado"
+slug: "07-nao-supervisionado"
 title: "Aprendizado Não Supervisionado"
-order: 5
+order: 7
 prerequisites: ["01-fundamentos", "03-validacao_otimizacao"]
 test_enabled: false
 outcomes:

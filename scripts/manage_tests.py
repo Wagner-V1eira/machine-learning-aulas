@@ -109,7 +109,7 @@ def main():
         epilog="Exemplos:\n"
         "  uv run python scripts/manage_tests.py list\n"
         "  uv run python scripts/manage_tests.py enable 01-fundamentos\n"
-        "  uv run python scripts/manage_tests.py disable 07-redes-neurais",
+        "  uv run python scripts/manage_tests.py disable 05-redes-neurais",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 

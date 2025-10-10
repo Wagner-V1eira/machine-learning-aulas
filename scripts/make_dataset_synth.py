@@ -57,32 +57,11 @@ def generate_clustering_dataset() -> pd.DataFrame:
     """Generate synthetic clustering dataset."""
     fix_random_seeds(42)
 
-    X, y = make_blobs(
-        n_samples=300, centers=4, n_features=2, random_state=42, cluster_std=1.5
-    )
+    X, y = make_blobs(n_samples=300, centers=4, n_features=2, random_state=42, cluster_std=1.5)
 
     # Create DataFrame
     df = pd.DataFrame(X, columns=["x", "y"])
     df["true_cluster"] = y
-
-    return df
-
-
-def generate_time_series_dataset() -> pd.DataFrame:
-    """Generate synthetic time series dataset."""
-    fix_random_seeds(42)
-
-    # Generate dates
-    dates = pd.date_range("2020-01-01", periods=365, freq="D")
-
-    # Generate trend + seasonality + noise
-    trend = np.linspace(100, 200, len(dates))
-    seasonal = 20 * np.sin(2 * np.pi * np.arange(len(dates)) / 365.25)
-    noise = np.random.normal(0, 5, len(dates))
-
-    values = trend + seasonal + noise
-
-    df = pd.DataFrame({"date": dates, "value": values})
 
     return df
 
@@ -100,7 +79,6 @@ def main() -> None:
         "regression_dataset.csv": generate_regression_dataset(),
         "classification_dataset.csv": generate_classification_dataset(),
         "clustering_dataset.csv": generate_clustering_dataset(),
-        "timeseries_dataset.csv": generate_time_series_dataset(),
     }
 
     # Save datasets
